@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2017 | Tako小8君</title>
+  <title>Hexo+Github个人博客搭建详细说明 | Tako小8君</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -175,87 +175,59 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_sea.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/04/24/Hexo-Github个人博客搭建详细说明/">Hexo+Github个人博客搭建详细说明</a></h4>
-                            
-                            <p><time datetime="2017-04-24T11:39:07.000Z"><a href="/2017/04/24/Hexo-Github个人博客搭建详细说明/">2017-04-24</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/04/24/【填坑】Hexo+Github个人博客搭建教程/">Hexo+Github个人博客搭建详细说明</a></h4>
-                            
-                            <p><time datetime="2017-04-24T11:39:07.000Z"><a href="/2017/04/24/【填坑】Hexo+Github个人博客搭建教程/">2017-04-24</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2017/04/22/hello-world/">Hello World</a></h4>
-                            
-                            <p><time datetime="2017-04-22T13:17:17.737Z"><a href="/2017/04/22/hello-world/">2017-04-22</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2017-04-24T11:39:07.000Z" itemprop="datePublished">
+          2017-04-24
+      </time>
+    
+    
+    | 
+    <a href='/tags/Hexo博客搭建/'>Hexo博客搭建</a>,
+    
+    <a href='/tags/DIY/'>DIY</a>,
+    
+    <a href='/tags/教程/'>教程</a>
+    
+    
+</span>
+                <h1>Hexo+Github个人博客搭建详细说明</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a><strong>写在前面的话</strong></h2><hr>
+<p>开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结了下，写成教程，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。</p>
+<h2 id="一-环境安装"><a href="#一-环境安装" class="headerlink" title="一. 环境安装"></a>一. 环境安装</h2><ol>
+<li>在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。<br>下载地址：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external">Nodejs下载</a> 以及 <a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">Git下载</a></li>
+</ol>
+<ol>
+<li>验证安装是否成功。在cmd命令指示符窗口输入：<br> git –version<br> node -v<br>可以显示按钻过版本，出现如下输出表示安装成功：<br><img src="D:\DonDracula.github.io\source\my_pic/1.png" alt="avatar"></li>
+</ol>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2017/04/24/Hexo-Github个人博客搭建详细说明/" style="float: left;">
+        ← Hexo+Github个人博客搭建详细说明
+    </a>
+    
+    
+</nav>
+
+        <div class="duoshuo">
+
+
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
