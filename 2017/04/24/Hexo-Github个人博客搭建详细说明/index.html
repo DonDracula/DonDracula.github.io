@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hexo+Github个人博客搭建详细说明 | Tako小8君</title>
+  <title>Hexo+Github静态博客搭建笔记(Windows) | Tako小8君</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -195,16 +195,18 @@
     
     
 </span>
-                <h1>Hexo+Github个人博客搭建详细说明</h1>
+                <h1>Hexo+Github静态博客搭建笔记(Windows)</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
       		<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a><strong>写在前面的话</strong></h2><hr>
-<p>开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结了下，写成教程，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。</p>
+<p>开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。</p>
 <h2 id="一-环境安装"><a href="#一-环境安装" class="headerlink" title="一. 环境安装"></a>一. 环境安装</h2><ol>
 <li><p>在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。<br>下载地址：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external"><font color="red" style="font-size:16px">Nodejs下载</font></a>以及<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external"><font color="red" style="font-size:16px">Git下载</font></a></p>
 </li>
-<li><p>验证安装是否成功。在cmd命令指示符窗口输入：<br>‘git –version’<br>‘node -v’<br>可以显示按钻过版本，出现如下输出表示安装成功：<br><img src="/my_pic/1.PNG" alt=""></p>
+<li><p>验证安装是否成功。在cmd命令指示符窗口输入：<br>‘git –version’<br>‘node -v’<br>可以显示安装的git版本，出现如下输出表示安装成功：<br><img src="/my_pic/1.PNG" alt=""></p>
+</li>
+<li><p>安装Hexo<br>在任意文件夹(比如D:/hexo)，选择Git Bash Here，打开git命令窗口，输入：<br>‘npm install hexo-cli -g’<br>得到如下所示界面：<br><img src="/my_pic/2.PNG" alt=""><br>接下来输入：<br>‘npm install hexo –save’<br>你会看到窗口刷了一大堆白字。然后输入下面的指令:<br>‘hexo -v’<br>当看到下面的输出时，表示安装成功。<br><img src="/my_pic/3.PNG" alt=""></p>
 </li>
 </ol>
 
