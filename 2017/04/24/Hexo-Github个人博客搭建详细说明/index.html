@@ -202,14 +202,16 @@
       		<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a><strong>写在前面的话</strong></h2><hr>
 <p>开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。</p>
 <h2 id="一-环境安装"><a href="#一-环境安装" class="headerlink" title="一. 环境安装"></a>一. 环境安装</h2><ol>
-<li><p>在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。<br>下载地址：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external"><font color="red" style="font-size:16px">Nodejs下载</font></a>以及<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external"><font color="red" style="font-size:16px">Git下载</font></a></p>
+<li><p><strong>在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。</strong><br>下载地址：<a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="external"><font color="red" style="font-size:16px">Nodejs下载</font></a>以及<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external"><font color="red" style="font-size:16px">Git下载</font></a></p>
 </li>
-<li><p>验证安装是否成功。在cmd命令指示符窗口输入：<br>‘git –version’<br>‘node -v’<br>可以显示安装的git版本，出现如下输出表示安装成功：<br><img src="/my_pic/1.PNG" alt=""></p>
+<li><p><strong>验证安装是否成功。在cmd命令指示符窗口输入：</strong><br>‘git –version’<br>‘node -v’<br>可以显示安装的git版本，出现如下输出表示安装成功：<br><img src="/my_pic/1.PNG" alt=""></p>
 </li>
-<li><p>安装Hexo<br>在任意文件夹(比如D:/hexo)，选择Git Bash Here，打开git命令窗口，输入：<br>‘npm install hexo-cli -g’<br>得到如下所示界面：<br><img src="/my_pic/2.PNG" alt=""><br>接下来输入：<br>‘npm install hexo –save’<br>你会看到窗口刷了一大堆白字。然后输入下面的指令:<br>‘hexo -v’<br>当看到下面的输出时，表示安装成功。<br><img src="/my_pic/3.PNG" alt=""></p>
+<li><p><strong>安装Hexo</strong><br>在任意文件夹(比如D:/hexo)，选择Git Bash Here，打开git命令窗口，输入：<br>‘npm install hexo-cli -g’<br>得到如下所示界面：<br><img src="/my_pic/2.PNG" alt=""><br>接下来输入：<br>‘npm install hexo –save’<br>你会看到窗口刷了一大堆白字。然后输入下面的指令:<br>‘hexo -v’<br>当看到下面的输出时，表示安装成功。<br><img src="/my_pic/3.PNG" alt=""></p>
 </li>
-<li>初始化Hexo<br>接着上面操作，输入：<br>‘hexo init’<br>进行初始化，然后输入：<br>‘npm install’<br>之后npm将会自动安装所需要的组件，只需要等待npm操作即可。</li>
-<li>测试<br>接下来，我们可以启动服务测试一下，在git命令框中输入：<br>‘hexo g’<br>稍等片刻，然后输入：<br>‘hexo s’<br>现在我们在浏览器中打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 已经可以看到一篇内置的blog了。<br><font color="red" style="font-size:16px">注意：</font>这里值得注意的是，以后在更新博客时，也要在博客源文件所在文件夹右键选择Git Bash Here，定位路径到此文件中，hexo g和hexo d才可以生效。</li>
+<li><p><strong>初始化Hexo</strong><br>接着上面操作，输入：<br>‘hexo init’<br>进行初始化，然后输入：<br>‘npm install’<br>之后npm将会自动安装所需要的组件，只需要等待npm操作即可。</p>
+</li>
+<li><p><strong>测试</strong><br>接下来，我们可以启动服务测试一下，在git命令框中输入：<br>‘hexo g’<br>稍等片刻，然后输入：<br>‘hexo s’<br>现在我们在浏览器中打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 已经可以看到一篇内置的blog了。<br><font color="red" style="font-size:16px">注意：</font>这里值得注意的是，以后在更新博客时，也要在博客源文件所在文件夹右键选择Git Bash Here，定位路径到此文件中，hexo g和hexo d才可以生效。</p>
+</li>
 </ol>
 <h2 id="二-部署到Github-Page"><a href="#二-部署到Github-Page" class="headerlink" title="二. 部署到Github Page"></a>二. 部署到Github Page</h2>
             <div class="clearfix"></div>
