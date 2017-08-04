@@ -60,7 +60,7 @@ color=&quot;0,0,255&quot; opacity=&apos;0.7&apos; zIndex=&quot;-2&quot; count=&q
     <link href="http://yoursite.com/2017/04/24/Hexo-Github%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/"/>
     <id>http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/</id>
     <published>2017-04-24T11:39:07.000Z</published>
-    <updated>2017-08-04T07:53:34.324Z</updated>
+    <updated>2017-08-04T08:17:45.188Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a><strong>写在前面的话</strong></h2><hr>
 <p>开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。</p>
@@ -130,7 +130,7 @@ hexo d   // 部署
 </code></pre><p>下载的主题都在hexo-&gt;themes文件夹中。</p>
 <p>把<font color="#4169E1">_config.yml</font>中的<font color="#4169E1">theme:landscape</font>改为<font color="#4169E1">theme:next</font>，然后重新执行<font color="#4169E1">hexo g</font>重新关联主题即可。</p>
 <p>接下来我们将要更改一些主题的设定，包括个性化以及集成第三方服务。</p>
-<h4 id="2-添加插件"><a href="#2-添加插件" class="headerlink" title="2.添加插件"></a>2.添加插件</h4><p>官方<a href="https://hexo.io/plugins/" target="_blank" rel="external">Plugins</a>，安装插件，增加博客趣味性。</p>
+<h4 id="2-添加插件"><a href="#2-添加插件" class="headerlink" title="2.添加插件"></a>2.添加插件</h4><p>官方<a href="https://hexo.io/plugins/" target="_blank" rel="external">Plugins</a>，安装插件，按需添加博客功能。</p>
 ]]></content>
     
     <summary type="html">
