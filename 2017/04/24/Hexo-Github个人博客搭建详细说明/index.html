@@ -10,13 +10,30 @@
   <title>Hexo+Github静态博客搭建笔记(Windows) | Tako小8君</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 
   
-    <meta name="keywords" content="Hexo Blog,DIY,教程," />
+    <meta name="keywords" content="DIY,教程," />
   
 
   <meta name="description" content="写在前面的话 开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。 一. 环境安装1.安装Nodejs和Git在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。下载地址：Nodejs下载以及Git下载 验证安装是否成">
-<meta name="keywords" content="Hexo Blog,DIY,教程">
+<meta name="keywords" content="DIY,教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+Github静态博客搭建笔记(Windows)">
 <meta property="og:url" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/index.html">
@@ -29,7 +46,7 @@
 <meta property="og:image" content="http://yoursite.com/my_pic/4.PNG">
 <meta property="og:image" content="http://yoursite.com/my_pic/5.png">
 <meta property="og:image" content="http://yoursite.com/my_pic/6.png">
-<meta property="og:updated_time" content="2017-08-02T07:48:33.275Z">
+<meta property="og:updated_time" content="2017-08-03T08:42:26.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github静态博客搭建笔记(Windows)">
 <meta name="twitter:description" content="写在前面的话 开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。 一. 环境安装1.安装Nodejs和Git在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。下载地址：Nodejs下载以及Git下载 验证安装是否成">
@@ -91,7 +108,6 @@
 
 <body>
 
-
   
     <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
   
@@ -146,7 +162,7 @@
             rel="noopener noreferrer"
             target="_self"
             >
-            友链
+            链接
           </a>
         </li>
       
@@ -158,17 +174,6 @@
             target="_self"
             >
             关于
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            rel="noopener noreferrer"
-            target="_blank"
-            >
-            RSS
           </a>
         </li>
       
@@ -190,9 +195,11 @@
 </div>
 
 
+
+
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面的话"><span class="toc-text">写在前面的话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一-环境安装"><span class="toc-text">一. 环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装Nodejs和Git"><span class="toc-text">1.安装Nodejs和Git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#验证安装是否成功。"><span class="toc-text">验证安装是否成功。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-安装Hexo"><span class="toc-text">2.安装Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-初始化Hexo"><span class="toc-text">3.初始化Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-测试"><span class="toc-text">4.测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-部署到Github-Page"><span class="toc-text">二. 部署到Github Page</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建仓库"><span class="toc-text">1.创建仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-绑定域名"><span class="toc-text">2.绑定域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-配置SSH-key"><span class="toc-text">3.配置SSH key</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#测试是否链接成功"><span class="toc-text">测试是否链接成功</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-配置Git个人信息："><span class="toc-text">4.配置Git个人信息：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-配置Deployment"><span class="toc-text">5.配置Deployment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-写博客发布"><span class="toc-text">6.写博客发布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-修改主题"><span class="toc-text">三. 修改主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#主题下载"><span class="toc-text">主题下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加插件"><span class="toc-text">添加插件</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面的话"><span class="toc-text">写在前面的话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一-环境安装"><span class="toc-text">一. 环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-安装Nodejs和Git"><span class="toc-text">1.安装Nodejs和Git</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#验证安装是否成功。"><span class="toc-text">验证安装是否成功。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-安装Hexo"><span class="toc-text">2.安装Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-初始化Hexo"><span class="toc-text">3.初始化Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-测试"><span class="toc-text">4.测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-部署到Github-Page"><span class="toc-text">二. 部署到Github Page</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-创建仓库"><span class="toc-text">1.创建仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-绑定域名"><span class="toc-text">2.绑定域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-配置SSH-key"><span class="toc-text">3.配置SSH key</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#测试是否链接成功"><span class="toc-text">测试是否链接成功</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-配置Git个人信息："><span class="toc-text">4.配置Git个人信息：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-配置Deployment"><span class="toc-text">5.配置Deployment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-写博客发布"><span class="toc-text">6.写博客发布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-修改主题"><span class="toc-text">三. 修改主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-主题下载"><span class="toc-text">1.主题下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-添加插件"><span class="toc-text">2.添加插件</span></a></li></ol></li></ol></li></ol>
   </div>
 
 
@@ -218,7 +225,7 @@
       
   <span class="article-category">
     <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/网站搭建/">网站搭建</a>
+    <a class="article-category-link" href="/categories/blog/">blog</a>
   </span>
 
 
@@ -226,7 +233,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2017/04/24/Hexo-Github个人博客搭建详细说明/#disqus_thread"></a>
+          <a href="https://dondracula.github.io/2017/04/24/Hexo-Github个人博客搭建详细说明/#disqus_thread"></a>
         </span>
       
 
@@ -264,8 +271,9 @@ node -v
 </code></pre><p>hexo会自动下载一些文件到这个目录，进行初始化,包括node_modules,目录结构如下：<br><img src="/my_pic/7.png" alt=""><br> 然后输入：</p>
 <pre><code>npm install
 </code></pre><p>  之后npm将会自动安装所需要的组件，只需要等待npm操作即可。</p>
-<h4 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h4><p>  接下来，我们可以启动服务测试一下，在git命令框中输入：<br>    hexo g</p>
-<p>  稍等片刻，然后输入：</p>
+<h4 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h4><p>  接下来，我们可以启动服务测试一下，在git命令框中输入：</p>
+<pre><code>hexo g
+</code></pre><p>  稍等片刻，然后输入：</p>
 <pre><code>hexo s
 </code></pre><p>  现在我们在浏览器中打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>已经可以看到一篇内置的blog了。</p>
 <p><font color="red" style="font-size:16px">注意：</font>这里值得注意的是，以后在更新博客时，也要在博客源文件所在文件夹右键选择Git Bash Here，定位路径到此文件中，hexo g和hexo d才可以生效。</p>
@@ -306,25 +314,27 @@ git config --global user.email &quot;你的github注册邮箱&quot;
 hexo d   // 部署
 </code></pre><p>然后就可以访问你的网址了。</p>
 <h2 id="三-修改主题"><a href="#三-修改主题" class="headerlink" title="三. 修改主题"></a>三. 修改主题</h2><p>默认的主题很丑很大众，我们当然想要写个性的主题，可以到 <a href="https://hexo.io/themes/" target="_blank" rel="external">官方主题</a> 下载。</p>
-<h4 id="主题下载"><a href="#主题下载" class="headerlink" title="主题下载"></a>主题下载</h4><p>这里以NexT主题为例。</p>
+<h4 id="1-主题下载"><a href="#1-主题下载" class="headerlink" title="1.主题下载"></a>1.主题下载</h4><p>这里以NexT主题为例。</p>
 <p>首先下载这个主题。</p>
 <pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
 </code></pre><p>下载的主题都在hexo-&gt;themes文件夹中。</p>
 <p>把<font color="#4169E1">_config.yml</font>中的<font color="#4169E1">theme:landscape</font>改为<font color="#4169E1">theme:next</font>，然后重新执行<font color="#4169E1">hexo g</font>重新关联主题即可。</p>
 <p>接下来我们将要更改一些主题的设定，包括个性化以及集成第三方服务。</p>
-<h4 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h4><p>官方<a href="https://hexo.io/plugins/" target="_blank" rel="external">Plugins</a>，安装插件，增加博客趣味性。</p>
+<h4 id="2-添加插件"><a href="#2-添加插件" class="headerlink" title="2.添加插件"></a>2.添加插件</h4><p>官方<a href="https://hexo.io/plugins/" target="_blank" rel="external">Plugins</a>，安装插件，增加博客趣味性。</p>
 
     
   </div>
 </article>
 
 
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
    
   <div class="text-center donation">
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持小8君</div>
         <ul class="theme.donation.items.length">
         
           <li class="item">
@@ -343,7 +353,7 @@ hexo d   // 部署
 
    
   <div class="box-prev-next clearfix">
-    <a class="hide pull-left" href="/">
+    <a class="show pull-left" href="/2017/08/03/Hexo-添加动态背景/">
         <i class="icon icon-angle-left"></i>
     </a>
     <a class="show pull-right" href="/2017/04/22/hello-world/">
@@ -357,9 +367,12 @@ hexo d   // 部署
 </div>
 
 
+
   <a id="backTop" class="back-top">
     <i class="icon-angle-up"></i>
   </a>
+
+
 
 
 
@@ -414,7 +427,7 @@ hexo d   // 部署
               rel="noopener noreferrer"
               target="_self"
               >
-              友链
+              链接
             </a>
           </li>
         
@@ -426,17 +439,6 @@ hexo d   // 部署
               target="_self"
               >
               关于
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              rel="noopener noreferrer"
-              target="_blank"
-              >
-              RSS
             </a>
           </li>
         
@@ -469,7 +471,7 @@ hexo d   // 部署
   </section>
 
   <script>
-    var disqus_shortname = 'forsigner';
+    var disqus_shortname = '小8君';
     
     var disqus_url = 'http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/';
     
@@ -482,7 +484,7 @@ hexo d   // 部署
     })();
   </script>
 
-  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+  <script id="dsq-count-scr" src="//小8君.disqus.com/count.js" async></script>
 
 
 
@@ -528,6 +530,16 @@ hexo d   // 部署
     });
   }
 </script>
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="88" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/love.js"></script>
+
+
+<a href="https://github.com/DonDracula"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
 </body>
 </html>
