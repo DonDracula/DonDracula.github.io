@@ -39,18 +39,18 @@
 <meta property="og:url" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/index.html">
 <meta property="og:site_name" content="Tako小8君">
 <meta property="og:description" content="写在前面的话 开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。 一. 环境安装1.安装Nodejs和Git在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。下载地址：Nodejs下载以及Git下载 验证安装是否成">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/1.PNG">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/2.PNG">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/3.PNG">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/7.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/4.PNG">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/5.png">
-<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/6.png">
-<meta property="og:updated_time" content="2017-08-04T13:34:46.189Z">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/1.PNG">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/2.PNG">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/3.PNG">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/7.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/4.png">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/5.PNG">
+<meta property="og:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/6.PNG">
+<meta property="og:updated_time" content="2017-08-04T15:09:37.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github静态博客搭建笔记(Windows)">
 <meta name="twitter:description" content="写在前面的话 开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。 一. 环境安装1.安装Nodejs和Git在安装Hexo之前，我们先要安装Nodejs和Git(如果已经安装，直接跳到下一步)。下载地址：Nodejs下载以及Git下载 验证安装是否成">
-<meta name="twitter:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/1.PNG">
+<meta name="twitter:image" content="http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/1.PNG">
 
   
 
@@ -198,7 +198,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
+    <strong class="toc-title">文章目录</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面的话"><span class="toc-text">写在前面的话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一-环境安装"><span class="toc-text">一. 环境安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Nodejs和Git"><span class="toc-text">1.安装Nodejs和Git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#验证安装是否成功。"><span class="toc-text">验证安装是否成功。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Hexo"><span class="toc-text">2.安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-初始化Hexo"><span class="toc-text">3.初始化Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-测试"><span class="toc-text">4.测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-部署到Github-Page"><span class="toc-text">二. 部署到Github Page</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建仓库"><span class="toc-text">1.创建仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-绑定域名"><span class="toc-text">2.绑定域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置SSH-key"><span class="toc-text">3.配置SSH key</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#测试是否链接成功"><span class="toc-text">测试是否链接成功</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-配置Git个人信息："><span class="toc-text">4.配置Git个人信息：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-配置Deployment"><span class="toc-text">5.配置Deployment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-写博客发布"><span class="toc-text">6.写博客发布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-修改主题"><span class="toc-text">三. 修改主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主题下载"><span class="toc-text">1.主题下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-添加插件"><span class="toc-text">2.添加插件</span></a></li></ol></li></ol>
   </div>
 
@@ -258,17 +258,17 @@
 <h4 id="验证安装是否成功。"><a href="#验证安装是否成功。" class="headerlink" title="验证安装是否成功。"></a>验证安装是否成功。</h4><p>在cmd命令指示符窗口输入：</p>
 <pre><code>git --version
 node -v
-</code></pre><p>可以显示安装的git版本，出现如下输出表示安装成功：<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/1.PNG" alt=""></p>
+</code></pre><p>可以显示安装的git版本，出现如下输出表示安装成功：<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/1.PNG" alt=""></p>
 <h3 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h3><p>  在任意文件夹(比如D:/hexo)，选择Git Bash Here，打开git命令窗口，输入：</p>
 <pre><code>npm install hexo-cli -g
-</code></pre><p>  得到如下所示界面：<br>  <img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/2.PNG" alt=""><br>  接下来输入：</p>
+</code></pre><p>  得到如下所示界面：<br>  <img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/2.PNG" alt=""><br>  接下来输入：</p>
 <pre><code>npm install hexo --save
 </code></pre><p>  你会看到窗口刷了一大堆白字。然后输入下面的指令:</p>
 <pre><code>hexo -v
-</code></pre><p>  当看到下面的输出时，表示安装成功。<br>  <img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/3.PNG" alt=""></p>
+</code></pre><p>  当看到下面的输出时，表示安装成功。<br>  <img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/3.PNG" alt=""></p>
 <h3 id="3-初始化Hexo"><a href="#3-初始化Hexo" class="headerlink" title="3.初始化Hexo"></a>3.初始化Hexo</h3><p>  接着上面操作，输入：</p>
 <pre><code>hexo init
-</code></pre><p>hexo会自动下载一些文件到这个目录，进行初始化,包括node_modules,目录结构如下：<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/7.png" alt=""><br> 然后输入：</p>
+</code></pre><p>hexo会自动下载一些文件到这个目录，进行初始化,包括node_modules,目录结构如下：<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/7.png" alt=""><br> 然后输入：</p>
 <pre><code>npm install
 </code></pre><p>  之后npm将会自动安装所需要的组件，只需要等待npm操作即可。</p>
 <h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h3><p>  接下来，我们可以启动服务测试一下，在git命令框中输入：</p>
@@ -285,7 +285,7 @@ node -v
 2.仓库名字必须是：username.github.io, 这里的username是你的github用户名；
 </code></pre><h3 id="2-绑定域名"><a href="#2-绑定域名" class="headerlink" title="2.绑定域名"></a>2.绑定域名</h3><p>创建仓库后，默认的博客地址是<font color="#4169E1">xxx.github.io</font>，如果有自己的域名，也可以绑定域名，实现链接跳转。</p>
 <p>这里的域名分为两种情况：带www和不带www。</p>
-<p>域名配置最常见有2种方式，CNAME和A记录。CNAME填写域名，A记录填写IP，由于不带www方式的域名只能采用A记录，所以必须先ping一下<font color="#4169E1">username.github.io</font>的IP，然后带你的域名DNS设置页，讲A记录指向你ping出来的IP，并将CNAME指向<font color="#4169E1">username.github.io</font>，这样可以保证无论是否添加www都可以访问，如下：<br> <img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/4.PNG" alt=""><br>然后到你的github项目根目录新建一个名为CNAME的文件，里面填写你自己的域名，加不加www没有影响。</p>
+<p>域名配置最常见有2种方式，CNAME和A记录。CNAME填写域名，A记录填写IP，由于不带www方式的域名只能采用A记录，所以必须先ping一下<font color="#4169E1">username.github.io</font>的IP，然后带你的域名DNS设置页，讲A记录指向你ping出来的IP，并将CNAME指向<font color="#4169E1">username.github.io</font>，这样可以保证无论是否添加www都可以访问，如下：<br> <img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/4.png" alt=""><br>然后到你的github项目根目录新建一个名为CNAME的文件，里面填写你自己的域名，加不加www没有影响。</p>
 <p>另外，绑定新域名后，原来的<font color="#4169E1">username.github.io</font>并没有失效，而是会自动跳转到你的新域名上。</p>
 <h3 id="3-配置SSH-key"><a href="#3-配置SSH-key" class="headerlink" title="3.配置SSH key"></a>3.配置SSH key</h3><p>配置ssh key是为了解决本地和服务器的链接问题。</p>
 <p>首先打开git界面，输入：</p>
@@ -293,10 +293,10 @@ node -v
 </code></pre><p>检查本地已存在的ssh密钥，如果提示：No such file or directory说明你是第一次使用git。</p>
 <p>之后输入：</p>
 <pre><code>ssh-keygen -t rsa -C &quot;邮箱地址&quot;
-</code></pre><p>然后连续回车3次，最终会生成一个文件在用户目录下，打开用户目录，找到 <font color="#4169E1">.ssh\id_rsa.pub</font> 文件，打开并复制里面的内容，打开github主页，在右上角头像图标下，进入Setting-&gt;SSH and GPG keys-&gt;New SSH key:<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/5.png" alt=""><br>将粘贴内容复制到key里，添加title，保存。</p>
+</code></pre><p>然后连续回车3次，最终会生成一个文件在用户目录下，打开用户目录，找到 <font color="#4169E1">.ssh\id_rsa.pub</font> 文件，打开并复制里面的内容，打开github主页，在右上角头像图标下，进入Setting-&gt;SSH and GPG keys-&gt;New SSH key:<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/5.PNG" alt=""><br>将粘贴内容复制到key里，添加title，保存。</p>
 <h4 id="测试是否链接成功"><a href="#测试是否链接成功" class="headerlink" title="测试是否链接成功"></a>测试是否链接成功</h4><p>输入：</p>
 <pre><code>ssh -T git@github.com     #邮箱地址不用改
-</code></pre><p>出现如下信息，说明SSH配置成功。<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/my_pic/6.png" alt=""></p>
+</code></pre><p>出现如下信息，说明SSH配置成功。<br><img src="/2017/04/24/Hexo-Github个人博客搭建详细说明/6.PNG" alt=""></p>
 <h3 id="4-配置Git个人信息："><a href="#4-配置Git个人信息：" class="headerlink" title="4.配置Git个人信息："></a>4.配置Git个人信息：</h3><p>设置git的用户名和邮箱</p>
 <pre><code>git config --global user.name &quot;你的github用户名&quot;
 git config --global user.email &quot;你的github注册邮箱&quot;
@@ -381,7 +381,7 @@ hexo d   // 部署
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">Close</span>
+      <span id="close" class="btn-close">关闭</span>
     </div>
     <hr>
     <div class="modal-body">
