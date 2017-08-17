@@ -32,17 +32,17 @@
     <meta name="keywords" content="DIY,教程," />
   
 
-  <meta name="description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码： &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-ne">
+  <meta name="description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码：1&amp;lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&amp;gt;&amp;">
 <meta name="keywords" content="DIY,教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 添加动态背景">
 <meta property="og:url" content="http://yoursite.com/2017/05/03/Hexo-添加动态背景/index.html">
 <meta property="og:site_name" content="Tako小8君">
-<meta property="og:description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码： &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-ne">
-<meta property="og:updated_time" content="2017-08-04T08:01:18.000Z">
+<meta property="og:description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码：1&amp;lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&amp;gt;&amp;">
+<meta property="og:updated_time" content="2017-08-17T08:56:05.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 添加动态背景">
-<meta name="twitter:description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码： &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-ne">
+<meta name="twitter:description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码：1&amp;lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&amp;gt;&amp;">
 
   
 
@@ -190,7 +190,7 @@
 
 
   <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
+    <strong class="toc-title">Posts List</strong>
     <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-layout-swig"><span class="toc-text">修改_layout.swig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线条设置"><span class="toc-text">线条设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置项说明"><span class="toc-text">配置项说明</span></a></li></ol>
   </div>
 
@@ -246,15 +246,11 @@
     
       <h2 id="修改-layout-swig"><a href="#修改-layout-swig" class="headerlink" title="修改_layout.swig"></a>修改_layout.swig</h2><p>打开 <font color="#4169E1">next/layout/_layout.swig</font></p>
 <p>在 &lt; /body&gt;之前添加代码(注意不要放在&lt; /head&gt;的后面)</p>
-<p>添加如下代码：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><h2 id="线条设置"><a href="#线条设置" class="headerlink" title="线条设置"></a>线条设置</h2><p>如果感觉默认线条太多的话，可以按如下方式配置：</p>
-<p>在上一步 <font color="#4169E1">_layout.swig</font>中的代码：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>改为：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;
-color=&quot;0,0,255&quot; opacity=&apos;0.7&apos; zIndex=&quot;-2&quot; count=&quot;99&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><h2 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h2><ul>
+<p>添加如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="线条设置"><a href="#线条设置" class="headerlink" title="线条设置"></a>线条设置</h2><p>如果感觉默认线条太多的话，可以按如下方式配置：</p>
+<p>在上一步 <font color="#4169E1">_layout.swig</font>中的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span></div><div class="line">color=<span class="string">"0,0,255"</span> opacity=<span class="string">'0.7'</span> zIndex=<span class="string">"-2"</span> count=<span class="string">"99"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h2><ul>
 <li><font color="#4169E1">color</font> ：线条颜色, 默认: ‘0,0,0’；三个数字分别为(R,G,B)</li>
 <li><font color="#4169E1">opacity</font>: 线条透明度（0~1）, 默认: 0.5</li>
 <li><font color="#4169E1">count</font>: 线条的总数量, 默认: 150</li>
@@ -320,7 +316,7 @@ color=&quot;0,0,255&quot; opacity=&apos;0.7&apos; zIndex=&quot;-2&quot; count=&q
   <span id="cover" class="cover hide"></span>
   <div id="modal-dialog" class="modal-dialog hide-dialog">
     <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
+      <span id="close" class="btn-close">Close</span>
     </div>
     <hr>
     <div class="modal-body">
@@ -480,20 +476,5 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="88" src="//cdn.bootcss.com/canv
 
 <a href="https://github.com/DonDracula"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

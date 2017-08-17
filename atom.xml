@@ -202,19 +202,15 @@
     <link href="http://yoursite.com/2017/05/03/Hexo-%E6%B7%BB%E5%8A%A0%E5%8A%A8%E6%80%81%E8%83%8C%E6%99%AF/"/>
     <id>http://yoursite.com/2017/05/03/Hexo-添加动态背景/</id>
     <published>2017-05-03T08:50:22.000Z</published>
-    <updated>2017-08-04T08:01:18.000Z</updated>
+    <updated>2017-08-17T08:56:05.289Z</updated>
     
     <content type="html"><![CDATA[<h2 id="修改-layout-swig"><a href="#修改-layout-swig" class="headerlink" title="修改_layout.swig"></a>修改_layout.swig</h2><p>打开 <font color="#4169E1">next/layout/_layout.swig</font></p>
 <p>在 &lt; /body&gt;之前添加代码(注意不要放在&lt; /head&gt;的后面)</p>
-<p>添加如下代码：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><h2 id="线条设置"><a href="#线条设置" class="headerlink" title="线条设置"></a>线条设置</h2><p>如果感觉默认线条太多的话，可以按如下方式配置：</p>
-<p>在上一步 <font color="#4169E1">_layout.swig</font>中的代码：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>改为：</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot;
-color=&quot;0,0,255&quot; opacity=&apos;0.7&apos; zIndex=&quot;-2&quot; count=&quot;99&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><h2 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h2><ul>
+<p>添加如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="线条设置"><a href="#线条设置" class="headerlink" title="线条设置"></a>线条设置</h2><p>如果感觉默认线条太多的话，可以按如下方式配置：</p>
+<p>在上一步 <font color="#4169E1">_layout.swig</font>中的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span></div><div class="line">color=<span class="string">"0,0,255"</span> opacity=<span class="string">'0.7'</span> zIndex=<span class="string">"-2"</span> count=<span class="string">"99"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h2><ul>
 <li><font color="#4169E1">color</font> ：线条颜色, 默认: ‘0,0,0’；三个数字分别为(R,G,B)</li>
 <li><font color="#4169E1">opacity</font>: 线条透明度（0~1）, 默认: 0.5</li>
 <li><font color="#4169E1">count</font>: 线条的总数量, 默认: 150</li>
