@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-10T08:03:03.066Z</updated>
+  <updated>2017-08-17T08:18:05.258Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>排序算法[归并排序-MergeSort]</title>
+    <link href="http://yoursite.com/2017/08/17/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-MergeSort/"/>
+    <id>http://yoursite.com/2017/08/17/排序算法-归并排序-MergeSort/</id>
+    <published>2017-08-17T07:26:14.000Z</published>
+    <updated>2017-08-17T08:18:05.258Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p>给定一个序列，先将其分割成很多个不能再分的子序列，然后再分别对各个子序列进行排序，最后将子序列合并的排序算法称为归并排序(Merge Sort)。<br>其实就是在重复两个步骤：</p>
+<ul>
+<li>分割 </li>
+<li>合并</li>
+</ul>
+<h3 id="1-分割"><a href="#1-分割" class="headerlink" title="1. 分割"></a>1. 分割</h3><p>首先是第一个问题，分割该怎么分。<br>比如有一个序列:12,23,1,44,233,10,9,8。我们先分成两段:12,23,1,44和233,10,9,8，<br>发现还能继续分割成4段:12,23和1,44，以及233,10和9,8。<br>然后再分成8段:12–23–1–44和233–10–9–8。<br>这时候开始把子序列进行排序合并，由于一个元素就是有序的，所以不用排序。<br>合并成2个一个排序得到:12,23—1,44—10,233—8,9。<br>然后再合并成4个一组的序列，得到:1,12,23,44—8,9,10,233。<br>最后把这两个序列合并，得到最终排序结果:1,8,9,10,12,23,44,233。</p>
+<p>递归实现分段的代码，如下:</p>
+<pre><code>void mergeSort(int a[], int first, int last, int temp[])
+{
+    if(first &lt; last)
+    {
+        int mid = (first + last)/2;
+        mergeSort(a, first, mid, temp);     //左
+        mergeSort(a, mid + 1, last, temp);    //右
+        mergeArray(a, first, mid, last, temp);    //再将两个有序数列合并
+    }
+}
+</code></pre><h3 id="2-合并"><a href="#2-合并" class="headerlink" title="2. 合并"></a>2. 合并</h3><p>现在的问题变成了怎么合并两个有序序列。思路是比较两个有序序列的第一个元素，把小的放进最终序列的结尾，并把它从原来的队列里面删掉，直到有一个序列为空为止。<br>这时候两一个序列可能还有剩余数据。由于他们本身是有序的，我们直接把他们添加到最终序列的尾部即可。<br>这样两个有序序列就合并成一个有序序列了。<br>具体代码如下：</p>
+<pre><code>void mergeArray(int a[], int first, int mid, int last, int temp[])
+{
+    int i = first, j = mid +1;
+    int m = mid, n = last;
+    int k = 0;
+
+    while(i &lt;= m &amp;&amp; j &lt;= n)
+    {
+        if(a[i] &lt;= a[j])
+            temp[k++] = a[i++];
+        else
+            temp[k++] = a[j++];
+    }
+
+    while (i &lt;= m)
+        temp[k++] = a[i++];
+
+    while(j &lt;= n)
+        temp[k++] = a[j++];
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;归并排序&quot;&gt;&lt;a href=&quot;#归并排序&quot; class=&quot;headerlink&quot; title=&quot;归并排序&quot;&gt;&lt;/a&gt;归并排序&lt;/h2&gt;&lt;p&gt;给定一个序列，先将其分割成很多个不能再分的子序列，然后再分别对各个子序列进行排序，最后将子序列合并的排序算法称为归并排序(M
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/C/"/>
+    
+    
+      <category term="排序算法" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>正确姿势上网-搭建自己的VPN</title>
