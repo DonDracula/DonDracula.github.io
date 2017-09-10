@@ -39,7 +39,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/08/10/WebGL-关于canvas/index.html">
 <meta property="og:site_name" content="Tako小8君">
 <meta property="og:description" content="时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。在开始讲解WebGL前，我们需要先了解下canva">
-<meta property="og:updated_time" content="2017-09-10T13:09:59.251Z">
+<meta property="og:updated_time" content="2017-09-10T13:11:55.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[WebGL]关于canvas">
 <meta name="twitter:description" content="时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。在开始讲解WebGL前，我们需要先了解下canva">
@@ -189,6 +189,11 @@
 
 
 
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">Posts List</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5和canvas标签"><span class="toc-text">HTML5和canvas标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas标签的基础知识"><span class="toc-text">canvas标签的基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebGL和canvas"><span class="toc-text">WebGL和canvas</span></a></li></ol>
+  </div>
+
 
 
 <div class="content content-post CENTER">
@@ -240,9 +245,9 @@
   <div class="article-content">
     
       <p>时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。<br>在开始讲解WebGL前，我们需要先了解下canvas。</p>
-<p>##HTML5和canvas标签##<br>HTML5是近年来炒的很热的一个次世代HTML标准规格。<br>在HTML5上，我们可以使音频，图形等浏览内容，拥有更为丰富的表现形态。与传统规格相比，其增加了许多新的标签，并且现在很多浏览器也在渐渐支持这种规格。<br>其中，canvas是一个与图形界面相关的标签。正如其名，这个标签是主要用于绘制图形，图像，并且可以通过使用javascript进行相关操作。 由于我们今后要讲的WebGL也会用到canvas，所以在讲解WebGL前，咱先对canvas标签进行简要说明。</p>
-<p>##canvas标签的基础知识##<br>与以前的img一样，canvas也是用于指定一个任意大的矩形区域。<br>通过javascript，可以在矩形区域内自由绘制图形，文字等内容。 然后程序员可以根据需求，进行很灵活的操作，如给图形添加阴影，涂色，添加旋转等。另外，也可以对一些常用的图片格式(gif,jpg,png等)，进行图像处理。<br>虽然使用javascript可以实现一般图形的高速绘制，然而，如果我们不使WebGL的话，与一般的软件相比，图形将会欠缺渲染，看起来总有种违和感。</p>
-<p>##WebGL和canvas##<br>在WebGL出现之前，也有很多需要大量绘制图形的网站，比如网页游戏，但是由于浏览器支持，网速等很多原因，这些游戏很多都是2d界面。<br>与之相比，WebGL最大的亮点就是可以在canvas中绘制3D图形。于是使得网页游戏由2d转变成3d成为可能；同时，在不远的未来，我们也有望在玩游戏时，不需要下载几十G的客户端，只需打开网页，登陆账号密码，即可玩大型3d游戏。</p>
+<h2 id="HTML5和canvas标签"><a href="#HTML5和canvas标签" class="headerlink" title="HTML5和canvas标签"></a>HTML5和canvas标签</h2><p>HTML5是近年来炒的很热的一个次世代HTML标准规格。<br>在HTML5上，我们可以使音频，图形等浏览内容，拥有更为丰富的表现形态。与传统规格相比，其增加了许多新的标签，并且现在很多浏览器也在渐渐支持这种规格。<br>其中，canvas是一个与图形界面相关的标签。正如其名，这个标签是主要用于绘制图形，图像，并且可以通过使用javascript进行相关操作。 由于我们今后要讲的WebGL也会用到canvas，所以在讲解WebGL前，咱先对canvas标签进行简要说明。</p>
+<h2 id="canvas标签的基础知识"><a href="#canvas标签的基础知识" class="headerlink" title="canvas标签的基础知识"></a>canvas标签的基础知识</h2><p>与以前的img一样，canvas也是用于指定一个任意大的矩形区域。<br>通过javascript，可以在矩形区域内自由绘制图形，文字等内容。 然后程序员可以根据需求，进行很灵活的操作，如给图形添加阴影，涂色，添加旋转等。另外，也可以对一些常用的图片格式(gif,jpg,png等)，进行图像处理。<br>虽然使用javascript可以实现一般图形的高速绘制，然而，如果我们不使WebGL的话，与一般的软件相比，图形将会欠缺渲染，看起来总有种违和感。</p>
+<h2 id="WebGL和canvas"><a href="#WebGL和canvas" class="headerlink" title="WebGL和canvas"></a>WebGL和canvas</h2><p>在WebGL出现之前，也有很多需要大量绘制图形的网站，比如网页游戏，但是由于浏览器支持，网速等很多原因，这些游戏很多都是2d界面。<br>与之相比，WebGL最大的亮点就是可以在canvas中绘制3D图形。于是使得网页游戏由2d转变成3d成为可能；同时，在不远的未来，我们也有望在玩游戏时，不需要下载几十G的客户端，只需打开网页，登陆账号密码，即可玩大型3d游戏。</p>
 
     
   </div>
