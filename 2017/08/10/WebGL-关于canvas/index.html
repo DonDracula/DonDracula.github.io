@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-tags心理学">
+  <html class="light page-post">
 
 
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 心理学 | Tako小8君</title>
+  <title>[WebGL]关于canvas | Tako小8君</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -29,15 +29,20 @@
 </style>
 
   
-    <meta name="keywords" content="blog,教程,DIY,物理模拟,设计,WebGL，收藏" />
+    <meta name="keywords" content="教程,WebGL," />
   
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Tako小8君">
-<meta property="og:url" content="http://yoursite.com/tags/心理学/index.html">
+  <meta name="description" content="时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。在开始讲解WebGL前，我们需要先了解下canva">
+<meta name="keywords" content="教程,WebGL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[WebGL]关于canvas">
+<meta property="og:url" content="http://yoursite.com/2017/08/10/WebGL-关于canvas/index.html">
 <meta property="og:site_name" content="Tako小8君">
+<meta property="og:description" content="时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。在开始讲解WebGL前，我们需要先了解下canva">
+<meta property="og:updated_time" content="2017-09-10T13:09:59.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tako小8君">
+<meta name="twitter:title" content="[WebGL]关于canvas">
+<meta name="twitter:description" content="时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。在开始讲解WebGL前，我们需要先了解下canva">
 
   
 
@@ -99,17 +104,8 @@
     <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
   
 
-  <div class="content content-tag">
-  <div class="page-header">
-
-  
-    <div class="breadcrumb">
-      <div class="location">Tags</div>
-      <i class="icon-location"></i>
-    </div>
-  
-
-  
+  <div class="post-header CENTER">
+   
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
       <span class="toolbox-entry-text">盒子</span>
@@ -188,218 +184,110 @@
   </div>
 
 
+</div>
 
-  <div class="box-blog-info">
-    <a class="avatar" href="/">
-      <img src="/images/avatar.jpg" alt="" />
-    </a>
-    <div class="info">
-      <h3 class="name" style="font-family: calligraffittiregular">
-        Tako小8
-      </h3>
-      <div class="slogan">
-        每一个不曾起舞的日子都是对生命的辜负。
+
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-WebGL-关于canvas" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">[WebGL]关于canvas</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.08.10</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Liu Yanhao</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Web开发/">Web开发</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://dondracula.github.io/2017/08/10/WebGL-关于canvas/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>时代在进步，web是大势所趋。咱这样的传统图形学c++程序员也要与时俱进，赶上互联网的大潮。今后将写一系列在web端，计算机图形学开发的教程，并将移植以前开发的opengl项目到web端。主要使用的工具是WebGL，这是一个将javascript和OpenGL ES结合，使Web开发人员可以借助系统显卡，在浏览器里更流畅的进行三维视觉化处理的工具。<br>在开始讲解WebGL前，我们需要先了解下canvas。</p>
+<p>##HTML5和canvas标签##<br>HTML5是近年来炒的很热的一个次世代HTML标准规格。<br>在HTML5上，我们可以使音频，图形等浏览内容，拥有更为丰富的表现形态。与传统规格相比，其增加了许多新的标签，并且现在很多浏览器也在渐渐支持这种规格。<br>其中，canvas是一个与图形界面相关的标签。正如其名，这个标签是主要用于绘制图形，图像，并且可以通过使用javascript进行相关操作。 由于我们今后要讲的WebGL也会用到canvas，所以在讲解WebGL前，咱先对canvas标签进行简要说明。</p>
+<p>##canvas标签的基础知识##<br>与以前的img一样，canvas也是用于指定一个任意大的矩形区域。<br>通过javascript，可以在矩形区域内自由绘制图形，文字等内容。 然后程序员可以根据需求，进行很灵活的操作，如给图形添加阴影，涂色，添加旋转等。另外，也可以对一些常用的图片格式(gif,jpg,png等)，进行图像处理。<br>虽然使用javascript可以实现一般图形的高速绘制，然而，如果我们不使WebGL的话，与一般的软件相比，图形将会欠缺渲染，看起来总有种违和感。</p>
+<p>##WebGL和canvas##<br>在WebGL出现之前，也有很多需要大量绘制图形的网站，比如网页游戏，但是由于浏览器支持，网速等很多原因，这些游戏很多都是2d界面。<br>与之相比，WebGL最大的亮点就是可以在canvas中绘制3D图形。于是使得网页游戏由2d转变成3d成为可能；同时，在不远的未来，我们也有望在玩游戏时，不需要下载几十G的客户端，只需打开网页，登陆账号密码，即可玩大型3d游戏。</p>
+
+    
+  </div>
+</article>
+
+
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持小8君</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
       </div>
     </div>
   </div>
 
-</div>
 
-  <section class="tag-box">
-  <div class="tag-title">Tags</div>
-  <div class="tag-list">
-    
-      <a class="tag-item" href="#DIY">
-        <span class="tag-name">DIY</span>
-        <span class="tag-size">( 3 )</span>
-      </a>
-    
-      <a class="tag-item" href="#WebGL">
-        <span class="tag-name">WebGL</span>
-        <span class="tag-size">( 1 )</span>
-      </a>
-    
-      <a class="tag-item" href="#心理学">
-        <span class="tag-name">心理学</span>
-        <span class="tag-size">( 1 )</span>
-      </a>
-    
-      <a class="tag-item" href="#排序算法">
-        <span class="tag-name">排序算法</span>
-        <span class="tag-size">( 1 )</span>
-      </a>
-    
-      <a class="tag-item" href="#教程">
-        <span class="tag-name">教程</span>
-        <span class="tag-size">( 5 )</span>
-      </a>
-    
-      <a class="tag-item" href="#爬虫">
-        <span class="tag-name">爬虫</span>
-        <span class="tag-size">( 1 )</span>
-      </a>
-    
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/08/17/排序算法-归并排序-MergeSort/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/08/08/正确姿势上网-搭建自己的VPN/">
+        <i class="icon icon-angle-right"></i>
+    </a>
   </div>
-</section>
-
-  <ul class="list-post"><li id="DIY" class="item-category-name item-title item-title-0">
-  <!--
-    <a href="" class="text-year">
-   -->
-    DIY
-    <span class="category-count">( 3 )</span>
-  <!--
-  </a>
-   -->
-</li>
-<li class="item-post item">
-  <span class="post-date">08-08</span>
-
-  
-  <a class="post-title" href="/2017/08/08/正确姿势上网-搭建自己的VPN/">正确姿势上网-搭建自己的VPN</a>
 
 
-</li>
-<li class="item-post item">
-  <span class="post-date">05-03</span>
-
-  
-  <a class="post-title" href="/2017/05/03/Hexo-添加动态背景/">Hexo 添加动态背景</a>
 
 
-</li>
-<li class="item-post item">
-  <span class="post-date">04-24</span>
-
-  
-  <a class="post-title" href="/2017/04/24/Hexo-Github个人博客搭建详细说明/">Hexo+Github静态博客搭建笔记(Windows)</a>
-
-
-</li>
-<li id="WebGL" class="item-category-name item-title item-title-1">
-  <!--
-    <a href="" class="text-year">
-   -->
-    WebGL
-    <span class="category-count">( 1 )</span>
-  <!--
-  </a>
-   -->
-</li>
-<li class="item-post item">
-  <span class="post-date">08-10</span>
-
-  
-  <a class="post-title" href="/2017/08/10/WebGL-关于canvas/">[WebGL]关于canvas</a>
-
-
-</li>
-<li id="心理学" class="item-category-name item-title item-title-2">
-  <!--
-    <a href="" class="text-year">
-   -->
-    心理学
-    <span class="category-count">( 1 )</span>
-  <!--
-  </a>
-   -->
-</li>
-<li class="item-post item">
-  <span class="post-date">06-17</span>
-
-  
-  <a class="post-title" href="/2017/06/17/人生最重要的三种能力，不是读书能学来的/">人生最重要的三种能力，不是读书能学来的</a>
-
-
-</li>
-<li id="排序算法" class="item-category-name item-title item-title-3">
-  <!--
-    <a href="" class="text-year">
-   -->
-    排序算法
-    <span class="category-count">( 1 )</span>
-  <!--
-  </a>
-   -->
-</li>
-<li class="item-post item">
-  <span class="post-date">08-17</span>
-
-  
-  <a class="post-title" href="/2017/08/17/排序算法-归并排序-MergeSort/">排序算法[归并排序-MergeSort]</a>
-
-
-</li>
-<li id="教程" class="item-category-name item-title item-title-4">
-  <!--
-    <a href="" class="text-year">
-   -->
-    教程
-    <span class="category-count">( 5 )</span>
-  <!--
-  </a>
-   -->
-</li>
-<li class="item-post item">
-  <span class="post-date">08-25</span>
-
-  
-  <a class="post-title" href="/2017/08/25/爬虫-爬取图集图片/">[爬虫]爬取图集图片</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">08-10</span>
-
-  
-  <a class="post-title" href="/2017/08/10/WebGL-关于canvas/">[WebGL]关于canvas</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">08-08</span>
-
-  
-  <a class="post-title" href="/2017/08/08/正确姿势上网-搭建自己的VPN/">正确姿势上网-搭建自己的VPN</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">05-03</span>
-
-  
-  <a class="post-title" href="/2017/05/03/Hexo-添加动态背景/">Hexo 添加动态背景</a>
-
-
-</li>
-<li class="item-post item">
-  <span class="post-date">04-24</span>
-
-  
-  <a class="post-title" href="/2017/04/24/Hexo-Github个人博客搭建详细说明/">Hexo+Github静态博客搭建笔记(Windows)</a>
-
-
-</li>
-<li id="爬虫" class="item-category-name item-title item-title-0">
-  <!--
-    <a href="" class="text-year">
-   -->
-    爬虫
-    <span class="category-count">( 1 )</span>
-  <!--
-  </a>
-   -->
-</li>
-<li class="item-post item">
-  <span class="post-date">08-25</span>
-
-  
-  <a class="post-title" href="/2017/08/25/爬虫-爬取图集图片/">[爬虫]爬取图集图片</a>
-
-
-</li>
-</ul>
 </div>
+
 
 
   <a id="backTop" class="back-top">
@@ -494,6 +382,44 @@
 </div>
 
 
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'tako8';
+    
+    var disqus_url = 'http://yoursite.com/2017/08/10/WebGL-关于canvas/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//tako8.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
 
   
 
