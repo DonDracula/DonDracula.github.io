@@ -88,6 +88,39 @@
   </entry>
   
   <entry>
+    <title>JAVA与C及C++区别比较</title>
+    <link href="http://yoursite.com/2017/08/11/JAVA%E4%B8%8EC%E5%8F%8AC-%E5%8C%BA%E5%88%AB%E6%AF%94%E8%BE%83/"/>
+    <id>http://yoursite.com/2017/08/11/JAVA与C及C-区别比较/</id>
+    <published>2017-08-11T07:00:35.000Z</published>
+    <updated>2017-09-11T09:10:18.303Z</updated>
+    
+    <content type="html"><![CDATA[<p>互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。<br>于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是一门不同的语言，其惯用法和模式，所谓入乡随俗，进了Java的世界我们就要按照Java的规矩来玩。比如对象需要如何创建，两个对象如何比较，枚举类型如何使用，泛型代码如何写，并发代码在什么情况下有哪一种上层建筑来实现比较好，什么时候在代码中抛出什么样的异常，什么时候使用反射。<br>本篇主要讲讲Java和C及C++语言特征的主要区别。</p>
+<h2 id="1-内存分配"><a href="#1-内存分配" class="headerlink" title="1. 内存分配"></a>1. 内存分配</h2><p>Java中对内存的分配是动态的，JVM会自动对内存进行扫描，并对长期不用的空间作为“垃圾”进行收集，使得系统资源得到更充分的利用。按照这种机制，程序员可以不必关注内存管理问题，这使Java程序的编写变得简单明了，并且避免了由于内存管理方面的误差导致系统出问题。而C语言通过<strong>malloc()</strong>和<strong>free()</strong>这两个函数来分配和释放内存，而C++语言则是通过运算符<strong>new</strong>和<strong>delete</strong>来实现对象内存的分配和释放。</p>
+<h2 id="2-数据类型的长度"><a href="#2-数据类型的长度" class="headerlink" title="2. 数据类型的长度"></a>2. 数据类型的长度</h2><p>Java对每种数据类型都分配固定长度。如，在Java中，int类型总是32位的，而在C和C++上，对于不同的平台，同一个数据类型会分配不同的字节数，同样是int类型，会占据操作系统一个内存单元的大小，也就是说在早先16位操作系统一个内存单元是16位，所以是2个字节；32位系统一个内存单元是32位，所以是4字节；64位系统则是8个字节。这使得C语言造成不可移植性，而Java则具有跨平台性（平台无关性）。</p>
+<h2 id="3-指针"><a href="#3-指针" class="headerlink" title="3. 指针"></a>3. 指针</h2><p>在Java中，程序员无法找到指针来直接访问内存，并且增加了自动的内存管理功能，从而有效的防止了C/C++语言中指针操作失误，如野指针所造成的系统崩溃（这个以前吃过很多亏）。然而Java在虚拟机内部还是使用了指针的，只是对外人不得使用而已。这样有利于Java程序的安全。</p>
+<h2 id="4-继承"><a href="#4-继承" class="headerlink" title="4. 继承"></a>4. 继承</h2><p>C++支持多重继承，这是C++的一个特性，它允许多父类派生一个类。尽管多重继承功能很强，但其使用复杂，并且会引起许多麻烦，编译程序实现它也很不容易。Java不支持多重继承，但允许一个类继承多个接口（extends+implement），实现了C++多重继承的功能，又避免了C++的多重继承实现方式带来的诸多不便。</p>
+<h2 id="5-数据类型及类"><a href="#5-数据类型及类" class="headerlink" title="5. 数据类型及类"></a>5. 数据类型及类</h2><p>Java是完全面向对象的语言，所有函数和变量都必须是类的一部分。除了基本数据类型之外，其余的都作为类对象，包括数组。对象将数据和方法结合起来，把他们封装在类中，这样每个对象都可以实现自己的特点和行为。而C++允许将函数和变量定义为全局的。</p>
+<h2 id="6-操作符重载"><a href="#6-操作符重载" class="headerlink" title="6. 操作符重载"></a>6. 操作符重载</h2><p>Java不支持操作符重载。操作符重载别认为是C++的突出特征，在Java中虽然类大体上可以实现这样的功能，但操作符重载的方便性仍然丢失了不少。Java语言不支持操作符重载也是为了保持其语言尽可能简单。</p>
+<h2 id="7-预处理功能"><a href="#7-预处理功能" class="headerlink" title="7. 预处理功能"></a>7. 预处理功能</h2><p>Java不支持预处理功能。C/C++则在编译过程中都有一个预编译阶段，及众所周知的预处理器，如#inculde，#if，#ifndef，#progma，#define等。预处理器为开发人员提供了方便，但与Java相比，增加了编译的复杂性。Java虚拟机没有预处理器，但它提供的引入语句(import)与C++的预处理器的功能类似。</p>
+<h2 id="8-异常"><a href="#8-异常" class="headerlink" title="8. 异常"></a>8. 异常</h2><p>Java中有异常机制用于捕获异常，而C++中则没有这样现成的机制。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。&lt;br&gt;于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是
+    
+    </summary>
+    
+      <category term="JAVA" scheme="http://yoursite.com/categories/JAVA/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/categories/JAVA/C/"/>
+    
+    
+      <category term="心得" scheme="http://yoursite.com/tags/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
     <title>[WebGL]关于canvas</title>
     <link href="http://yoursite.com/2017/08/10/WebGL-%E5%85%B3%E4%BA%8Ecanvas/"/>
     <id>http://yoursite.com/2017/08/10/WebGL-关于canvas/</id>
@@ -161,7 +194,7 @@
     <link href="http://yoursite.com/2017/06/21/%E7%94%B7%E4%BA%BA%E8%BA%AB%E4%B8%8A%E6%9C%80%E6%80%A7%E6%84%9F%E7%9A%847%E5%9D%97%E8%82%8C%E8%82%89%E4%B8%8E%E5%85%B6%E5%8F%8A%E9%94%BB%E7%82%BC%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/</id>
     <published>2017-06-21T13:40:22.000Z</published>
-    <updated>2017-08-04T15:04:26.000Z</updated>
+    <updated>2017-09-11T07:04:00.442Z</updated>
     
     <content type="html"><![CDATA[<div align="center"><br>肌肉是男人来说是最好的外套！<br><br>穿衣显瘦，脱衣有肉<br><br>性感的线条无疑能俘获很多迷妹的心！<br><br>一起来看看<br><br>到底男人身上最具杀伤力的肌肉<br><br>都是哪部分<br><br>另附锻炼图解<br><br><font color="#FF6600">NO.7 大腿</font><br><br><img src="/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/body1.jpg" width="500"><br><img src="/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/body2.jpg" width="500"><br><img src="/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/body3.jpg" width="500"><br></div><br>正所谓美不美，看大腿，男人也是如此。但许多汉子却忽视了腿部肌肉的锻炼，导致上身很魁梧，下半身却是一双纤细的竹竿！要知道，粗壮且线条性感的腿部是男人某能力的重要象征！<br><div align="center"><br><font color="#FF6600">锻炼方法▼</font><br><br><img src="/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/train1.jpg" width="500"><br><br><font color="#FF6600">NO.6 三角肌</font><br><br><img src="/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/body4.jpg" width="500"><br><img src="/2017/06/21/男人身上最性感的7块肌肉与其及锻炼方法/body5.jpg" width="500"><br></div>
 
@@ -174,6 +207,10 @@
     
     </summary>
     
+      <category term="收藏" scheme="http://yoursite.com/categories/%E6%94%B6%E8%97%8F/"/>
+    
+    
+      <category term="健身" scheme="http://yoursite.com/tags/%E5%81%A5%E8%BA%AB/"/>
     
   </entry>
   

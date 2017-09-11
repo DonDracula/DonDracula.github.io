@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo 添加动态背景 | Tako小8君</title>
+  <title>JAVA与C及C++区别比较 | Tako小8君</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -29,20 +29,20 @@
 </style>
 
   
-    <meta name="keywords" content="DIY,教程," />
+    <meta name="keywords" content="心得," />
   
 
-  <meta name="description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码：1&amp;lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&amp;gt;&amp;">
-<meta name="keywords" content="DIY,教程">
+  <meta name="description" content="互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是一门不同的语言，其惯用法和模式，所谓入乡随俗，进了Java的世界我们就要按照Java的规矩来玩。比如对象需要如何创建，两个对象如何比较">
+<meta name="keywords" content="心得">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo 添加动态背景">
-<meta property="og:url" content="http://yoursite.com/2017/05/03/Hexo-添加动态背景/index.html">
+<meta property="og:title" content="JAVA与C及C++区别比较">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/JAVA与C及C-区别比较/index.html">
 <meta property="og:site_name" content="Tako小8君">
-<meta property="og:description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码：1&amp;lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&amp;gt;&amp;">
-<meta property="og:updated_time" content="2017-08-17T08:56:05.289Z">
+<meta property="og:description" content="互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是一门不同的语言，其惯用法和模式，所谓入乡随俗，进了Java的世界我们就要按照Java的规矩来玩。比如对象需要如何创建，两个对象如何比较">
+<meta property="og:updated_time" content="2017-09-11T09:10:18.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo 添加动态背景">
-<meta name="twitter:description" content="修改_layout.swig打开 next/layout/_layout.swig 在 &amp;lt; /body&amp;gt;之前添加代码(注意不要放在&amp;lt; /head&amp;gt;的后面) 添加如下代码：1&amp;lt;script type=&quot;text/javascript&quot; src=&quot;//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js&quot;&amp;gt;&amp;">
+<meta name="twitter:title" content="JAVA与C及C++区别比较">
+<meta name="twitter:description" content="互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是一门不同的语言，其惯用法和模式，所谓入乡随俗，进了Java的世界我们就要按照Java的规矩来玩。比如对象需要如何创建，两个对象如何比较">
 
   
 
@@ -191,20 +191,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-layout-swig"><span class="toc-text">修改_layout.swig</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线条设置"><span class="toc-text">线条设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置项说明"><span class="toc-text">配置项说明</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-内存分配"><span class="toc-text">1. 内存分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-数据类型的长度"><span class="toc-text">2. 数据类型的长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-指针"><span class="toc-text">3. 指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-继承"><span class="toc-text">4. 继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-数据类型及类"><span class="toc-text">5. 数据类型及类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-操作符重载"><span class="toc-text">6. 操作符重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-预处理功能"><span class="toc-text">7. 预处理功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-异常"><span class="toc-text">8. 异常</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-Hexo-添加动态背景" class="article article-type-post" itemprop="blogPost">
+   <article id="post-JAVA与C及C-区别比较" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">Hexo 添加动态背景</h1>
+    <h1 class="post-title">JAVA与C及C++区别比较</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2017.05.03</span>
+        <span>2017.08.11</span>
       </span>
 
       
@@ -217,7 +217,7 @@
       
   <span class="article-category">
     <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/blog/">blog</a>
+    <a class="article-category-link" href="/categories/JAVA/">JAVA</a> / <a class="article-category-link" href="/categories/JAVA/C/">C++</a>
   </span>
 
 
@@ -225,7 +225,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://dondracula.github.io/2017/05/03/Hexo-添加动态背景/#disqus_thread"></a>
+          <a href="https://dondracula.github.io/2017/08/11/JAVA与C及C-区别比较/#disqus_thread"></a>
         </span>
       
 
@@ -244,18 +244,15 @@
 
   <div class="article-content">
     
-      <h2 id="修改-layout-swig"><a href="#修改-layout-swig" class="headerlink" title="修改_layout.swig"></a>修改_layout.swig</h2><p>打开 <font color="#4169E1">next/layout/_layout.swig</font></p>
-<p>在 &lt; /body&gt;之前添加代码(注意不要放在&lt; /head&gt;的后面)</p>
-<p>添加如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="线条设置"><a href="#线条设置" class="headerlink" title="线条设置"></a>线条设置</h2><p>如果感觉默认线条太多的话，可以按如下方式配置：</p>
-<p>在上一步 <font color="#4169E1">_layout.swig</font>中的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>改为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span></div><div class="line">color=<span class="string">"0,0,255"</span> opacity=<span class="string">'0.7'</span> zIndex=<span class="string">"-2"</span> count=<span class="string">"99"</span> src=<span class="string">"//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<h2 id="配置项说明"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明</h2><ul>
-<li><font color="#4169E1">color</font> ：线条颜色, 默认: ‘0,0,0’；三个数字分别为(R,G,B)</li>
-<li><font color="#4169E1">opacity</font>: 线条透明度（0~1）, 默认: 0.5</li>
-<li><font color="#4169E1">count</font>: 线条的总数量, 默认: 150</li>
-<li><font color="#4169E1">zIndex</font>: 背景的z-index属性，css属性用于控制所在层的位置, 默认: -1</li>
-</ul>
+      <p>互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。<br>于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是一门不同的语言，其惯用法和模式，所谓入乡随俗，进了Java的世界我们就要按照Java的规矩来玩。比如对象需要如何创建，两个对象如何比较，枚举类型如何使用，泛型代码如何写，并发代码在什么情况下有哪一种上层建筑来实现比较好，什么时候在代码中抛出什么样的异常，什么时候使用反射。<br>本篇主要讲讲Java和C及C++语言特征的主要区别。</p>
+<h2 id="1-内存分配"><a href="#1-内存分配" class="headerlink" title="1. 内存分配"></a>1. 内存分配</h2><p>Java中对内存的分配是动态的，JVM会自动对内存进行扫描，并对长期不用的空间作为“垃圾”进行收集，使得系统资源得到更充分的利用。按照这种机制，程序员可以不必关注内存管理问题，这使Java程序的编写变得简单明了，并且避免了由于内存管理方面的误差导致系统出问题。而C语言通过<strong>malloc()</strong>和<strong>free()</strong>这两个函数来分配和释放内存，而C++语言则是通过运算符<strong>new</strong>和<strong>delete</strong>来实现对象内存的分配和释放。</p>
+<h2 id="2-数据类型的长度"><a href="#2-数据类型的长度" class="headerlink" title="2. 数据类型的长度"></a>2. 数据类型的长度</h2><p>Java对每种数据类型都分配固定长度。如，在Java中，int类型总是32位的，而在C和C++上，对于不同的平台，同一个数据类型会分配不同的字节数，同样是int类型，会占据操作系统一个内存单元的大小，也就是说在早先16位操作系统一个内存单元是16位，所以是2个字节；32位系统一个内存单元是32位，所以是4字节；64位系统则是8个字节。这使得C语言造成不可移植性，而Java则具有跨平台性（平台无关性）。</p>
+<h2 id="3-指针"><a href="#3-指针" class="headerlink" title="3. 指针"></a>3. 指针</h2><p>在Java中，程序员无法找到指针来直接访问内存，并且增加了自动的内存管理功能，从而有效的防止了C/C++语言中指针操作失误，如野指针所造成的系统崩溃（这个以前吃过很多亏）。然而Java在虚拟机内部还是使用了指针的，只是对外人不得使用而已。这样有利于Java程序的安全。</p>
+<h2 id="4-继承"><a href="#4-继承" class="headerlink" title="4. 继承"></a>4. 继承</h2><p>C++支持多重继承，这是C++的一个特性，它允许多父类派生一个类。尽管多重继承功能很强，但其使用复杂，并且会引起许多麻烦，编译程序实现它也很不容易。Java不支持多重继承，但允许一个类继承多个接口（extends+implement），实现了C++多重继承的功能，又避免了C++的多重继承实现方式带来的诸多不便。</p>
+<h2 id="5-数据类型及类"><a href="#5-数据类型及类" class="headerlink" title="5. 数据类型及类"></a>5. 数据类型及类</h2><p>Java是完全面向对象的语言，所有函数和变量都必须是类的一部分。除了基本数据类型之外，其余的都作为类对象，包括数组。对象将数据和方法结合起来，把他们封装在类中，这样每个对象都可以实现自己的特点和行为。而C++允许将函数和变量定义为全局的。</p>
+<h2 id="6-操作符重载"><a href="#6-操作符重载" class="headerlink" title="6. 操作符重载"></a>6. 操作符重载</h2><p>Java不支持操作符重载。操作符重载别认为是C++的突出特征，在Java中虽然类大体上可以实现这样的功能，但操作符重载的方便性仍然丢失了不少。Java语言不支持操作符重载也是为了保持其语言尽可能简单。</p>
+<h2 id="7-预处理功能"><a href="#7-预处理功能" class="headerlink" title="7. 预处理功能"></a>7. 预处理功能</h2><p>Java不支持预处理功能。C/C++则在编译过程中都有一个预编译阶段，及众所周知的预处理器，如#inculde，#if，#ifndef，#progma，#define等。预处理器为开发人员提供了方便，但与Java相比，增加了编译的复杂性。Java虚拟机没有预处理器，但它提供的引入语句(import)与C++的预处理器的功能类似。</p>
+<h2 id="8-异常"><a href="#8-异常" class="headerlink" title="8. 异常"></a>8. 异常</h2><p>Java中有异常机制用于捕获异常，而C++中则没有这样现成的机制。</p>
 
     
   </div>
@@ -288,10 +285,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/06/17/人生最重要的三种能力，不是读书能学来的/">
+    <a class="show pull-left" href="/2017/08/17/排序算法-归并排序-MergeSort/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/04/24/Hexo-Github个人博客搭建详细说明/">
+    <a class="show pull-right" href="/2017/08/10/WebGL-关于canvas/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -408,7 +405,7 @@
   <script>
     var disqus_shortname = 'tako8';
     
-    var disqus_url = 'http://yoursite.com/2017/05/03/Hexo-添加动态背景/';
+    var disqus_url = 'http://yoursite.com/2017/08/11/JAVA与C及C-区别比较/';
     
     (function(){
       var dsq = document.createElement('script');
