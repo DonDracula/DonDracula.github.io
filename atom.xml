@@ -92,7 +92,7 @@
     <link href="http://yoursite.com/2017/08/11/JAVA%E4%B8%8EC%E5%8F%8AC-%E5%8C%BA%E5%88%AB%E6%AF%94%E8%BE%83/"/>
     <id>http://yoursite.com/2017/08/11/JAVA与C及C-区别比较/</id>
     <published>2017-08-11T07:00:35.000Z</published>
-    <updated>2017-09-11T09:10:18.303Z</updated>
+    <updated>2017-09-11T09:10:42.689Z</updated>
     
     <content type="html"><![CDATA[<p>互联网大红大紫，JS如日中天，作为传统C++开发工程师，一直在考虑跑去做web开发。而Java作为时下主流web开发语言，并且与我熟悉的c++也有许多相似之处，便成了我的首选。<br>于C++程序员来说，Java语法完全没有问题，可以说超过80%的结构都是一样的。但是毕竟是一门不同的语言，其惯用法和模式，所谓入乡随俗，进了Java的世界我们就要按照Java的规矩来玩。比如对象需要如何创建，两个对象如何比较，枚举类型如何使用，泛型代码如何写，并发代码在什么情况下有哪一种上层建筑来实现比较好，什么时候在代码中抛出什么样的异常，什么时候使用反射。<br>本篇主要讲讲Java和C及C++语言特征的主要区别。</p>
 <h2 id="1-内存分配"><a href="#1-内存分配" class="headerlink" title="1. 内存分配"></a>1. 内存分配</h2><p>Java中对内存的分配是动态的，JVM会自动对内存进行扫描，并对长期不用的空间作为“垃圾”进行收集，使得系统资源得到更充分的利用。按照这种机制，程序员可以不必关注内存管理问题，这使Java程序的编写变得简单明了，并且避免了由于内存管理方面的误差导致系统出问题。而C语言通过<strong>malloc()</strong>和<strong>free()</strong>这两个函数来分配和释放内存，而C++语言则是通过运算符<strong>new</strong>和<strong>delete</strong>来实现对象内存的分配和释放。</p>
@@ -340,7 +340,7 @@
     <link href="http://yoursite.com/2017/04/24/Hexo-Github%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E/"/>
     <id>http://yoursite.com/2017/04/24/Hexo-Github个人博客搭建详细说明/</id>
     <published>2017-04-24T11:39:07.000Z</published>
-    <updated>2017-08-04T15:09:38.000Z</updated>
+    <updated>2017-12-09T08:32:43.693Z</updated>
     
     <content type="html"><![CDATA[<h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a><strong>写在前面的话</strong></h2><hr>
 <p>开始用Hexo和Github Page搭建自己的博客了，把踩过的雷，犯过的错总结并记录下来，以后备用，也同时给大家参考。本篇主要介绍：配置Hexo框架，部署到Github Page，域名注册及绑定等。</p>
@@ -367,7 +367,7 @@ node -v
 <pre><code>hexo s
 </code></pre><p>  现在我们在浏览器中打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>已经可以看到一篇内置的blog了。</p>
 <p><font color="red" style="font-size:16px">注意：</font>这里值得注意的是，以后在更新博客时，也要在博客源文件所在文件夹右键选择Git Bash Here，定位路径到此文件中，hexo g和hexo d才可以生效。</p>
-<p>另外，hexo s是开启本地服务器，打开浏览器访问<a href="http://localhost:4000即可看到内容，" target="_blank" rel="external">http://localhost:4000即可看到内容，</a></p>
+<p>另外，hexo s是开启本地服务器，打开浏览器访问<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>即可看到内容，</p>
 <h2 id="二-部署到Github-Page"><a href="#二-部署到Github-Page" class="headerlink" title="二. 部署到Github Page"></a>二. 部署到Github Page</h2><p>打开<a href="https://github.com" target="_blank" rel="external"><font color="red" style="font-size:16px">https://github.com</font></a> 登录(或注册)账号。</p>
 <h3 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h3><p>点击页面右上角加号，选择New repository，进入代码库创建页面。在Repository name下填写<font color="#4169E1">yourname.github.io</font>,比如，你的github用户名是test，那么就新建<font color="#4169E1">test.github.io</font>的仓库,以后便可以通过<font color="#4169E1"> <a href="http://test.github.io" target="_blank" rel="external">http://test.github.io</a> </font>来访问你的博客了。也就是说，每一个github账户只能创建一个这样可以直接使用域名访问的仓库。</p>
 <p>这里需要注意的是：</p>
@@ -399,7 +399,7 @@ git config --global user.email &quot;你的github注册邮箱&quot;
 </code></pre><h3 id="6-写博客发布"><a href="#6-写博客发布" class="headerlink" title="6.写博客发布"></a>6.写博客发布</h3><p>可通过如下命令新建一篇博客文章：</p>
 <pre><code>hexo new post &quot;article title&quot;
 </code></pre><p>这时候在我的电脑的目录下 F:\hexo\source\ _posts 将会看到 article title.md 文件</p>
-<p>用MarDown编辑器打开就可以编辑文章了。文章编辑好之后，运行生成、部署命令：</p>
+<p>用MarkDown编辑器打开就可以编辑文章了。文章编辑好之后，运行生成、部署命令：</p>
 <pre><code>hexo g   // 生成
 hexo d   // 部署
 </code></pre><p>然后就可以访问你的网址了。</p>
