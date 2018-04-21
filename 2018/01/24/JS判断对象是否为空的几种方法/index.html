@@ -32,17 +32,17 @@
     <meta name="keywords" content="总结," />
   
 
-  <meta name="description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b);     //true 2.for in 循环判断12345678var obj = &amp;#1">
+  <meta name="description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b===&quot;&amp;#123;&amp;#125;&quot;);     //true 2.for in 循环判断1234">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS判断对象是否为空的几种方法">
 <meta property="og:url" content="http://yoursite.com/2018/01/24/JS判断对象是否为空的几种方法/index.html">
 <meta property="og:site_name" content="Tako小8君">
-<meta property="og:description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b);     //true 2.for in 循环判断12345678var obj = &amp;#1">
-<meta property="og:updated_time" content="2018-03-24T13:49:26.371Z">
+<meta property="og:description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b===&quot;&amp;#123;&amp;#125;&quot;);     //true 2.for in 循环判断1234">
+<meta property="og:updated_time" content="2018-04-21T14:06:17.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS判断对象是否为空的几种方法">
-<meta name="twitter:description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b);     //true 2.for in 循环判断12345678var obj = &amp;#1">
+<meta name="twitter:description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b===&quot;&amp;#123;&amp;#125;&quot;);     //true 2.for in 循环判断1234">
 
   
 
@@ -246,7 +246,7 @@
   <div class="article-content">
     
       <p>在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点：</p>
-<h3 id="1-j将json对象转化为json字符串，在判断该字符串是否“-”"><a href="#1-j将json对象转化为json字符串，在判断该字符串是否“-”" class="headerlink" title="1.j将json对象转化为json字符串，在判断该字符串是否“{}”"></a>1.j将json对象转化为json字符串，在判断该字符串是否“{}”</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = (<span class="built_in">JSON</span>.stringify(data));</div><div class="line">alert(b);     <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h3 id="1-j将json对象转化为json字符串，在判断该字符串是否“-”"><a href="#1-j将json对象转化为json字符串，在判断该字符串是否“-”" class="headerlink" title="1.j将json对象转化为json字符串，在判断该字符串是否“{}”"></a>1.j将json对象转化为json字符串，在判断该字符串是否“{}”</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = (<span class="built_in">JSON</span>.stringify(data));</div><div class="line">alert(b===<span class="string">"&#123;&#125;"</span>);     <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <h3 id="2-for-in-循环判断"><a href="#2-for-in-循环判断" class="headerlink" title="2.for in 循环判断"></a>2.for in 循环判断</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</div><div class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">alert(b());     <span class="comment">//true</span></div></pre></td></tr></table></figure>
 <h3 id="3-jquery的isEmptyObject方法"><a href="#3-jquery的isEmptyObject方法" class="headerlink" title="3.jquery的isEmptyObject方法"></a>3.jquery的isEmptyObject方法</h3><p>此方法是jquery将上述2的方法(for in)进行封装，使用时需要依赖jquery<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = $.isEmptyObject(data);</div><div class="line">alert(b);     <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
 <h3 id="4-Object-getOwnPropertyNames-方法"><a href="#4-Object-getOwnPropertyNames-方法" class="headerlink" title="4.Object.getOwnPropertyNames()方法"></a>4.Object.getOwnPropertyNames()方法</h3><p>此方法是使用Object对象的getOwnPropertyNames方法，获取到对象中的属性名，存到一个数组中，返回数组对象，我们可以通过判断数组的length来判断此对象是否为空<br>注意：此方法不兼容ie8，其余浏览器没测试<br>var data = {};<br>var arr = Object.getOwnPropertyNames(data);<br>alert(arr.length == 0);     //true</p>
@@ -286,7 +286,7 @@
     <a class="hide pull-left" href="/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/08/25/爬虫-爬取图集图片/">
+    <a class="show pull-right" href="/2018/01/21/Cocos中场景切换特效/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>

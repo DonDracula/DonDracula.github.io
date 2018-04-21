@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cocos中场景切换特效 | Tako小8君</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+    <meta name="keywords" content="blog,教程,DIY,物理模拟,设计,WebGL，收藏" />
+  
+
+  <meta name="description" content="Cocos为我们提供了多种场景切换特效1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocos中场景切换特效">
+<meta property="og:url" content="http://yoursite.com/2018/01/21/Cocos中场景切换特效/index.html">
+<meta property="og:site_name" content="Tako小8君">
+<meta property="og:description" content="Cocos为我们提供了多种场景切换特效1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+<meta property="og:updated_time" content="2018-04-21T14:08:51.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cocos中场景切换特效">
+<meta name="twitter:description" content="Cocos为我们提供了多种场景切换特效1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+
+    <body>
+
+        
+            <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+            
+
+                <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            链接
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cocos为我们提供了多种场景切换特效"><span class="toc-text">Cocos为我们提供了多种场景切换特效</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意："><span class="toc-text">注意：</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Cocos中场景切换特效" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Cocos中场景切换特效</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.01.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Liu Yanhao</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Cocos/">Cocos</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://dondracula.github.io/2018/01/21/Cocos中场景切换特效/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h3 id="Cocos为我们提供了多种场景切换特效"><a href="#Cocos为我们提供了多种场景切换特效" class="headerlink" title="Cocos为我们提供了多种场景切换特效"></a>Cocos为我们提供了多种场景切换特效</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> JumpZoomTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionJumpZoom(t, s);</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> FadeTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFade(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FadeWhiteTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFade(t, s, cc.color(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>));</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FlipXLeftOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFlipX(t, s, cc.TRANSITION_ORIENTATION_LEFT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FlipXRightOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFlipX(t, s, cc.TRANSITION_ORIENTATION_RIGHT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FlipYUpOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFlipY(t, s, cc.TRANSITION_ORIENTATION_UP_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FlipYDownOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFlipY(t, s, cc.TRANSITION_ORIENTATION_DOWN_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FlipAngularLeftOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFlipAngular(t, s, cc.TRANSITION_ORIENTATION_LEFT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FlipAngularRightOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFlipAngular(t, s, cc.TRANSITION_ORIENTATION_RIGHT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ZoomFlipXLeftOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionZoomFlipX(t, s, cc.TRANSITION_ORIENTATION_LEFT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ZoomFlipXRightOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionZoomFlipX(t, s, cc.TRANSITION_ORIENTATION_RIGHT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ZoomFlipYUpOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionZoomFlipY(t, s, cc.TRANSITION_ORIENTATION_UP_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ZoomFlipYDownOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionZoomFlipY(t, s, cc.TRANSITION_ORIENTATION_DOWN_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ZoomFlipAngularLeftOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionZoomFlipAngular(t, s, cc.TRANSITION_ORIENTATION_LEFT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ZoomFlipAngularRightOver = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionZoomFlipAngular(t, s, cc.TRANSITION_ORIENTATION_RIGHT_OVER);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> ShrinkGrowTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionShrinkGrow(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> RotoZoomTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionRotoZoom(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> MoveInLTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionMoveInL(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> MoveInRTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionMoveInR(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> MoveInTTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionMoveInT(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> MoveInBTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionMoveInB(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SlideInLTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionSlideInL(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SlideInRTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionSlideInR(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SlideInTTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionSlideInT(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SlideInBTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionSlideInB(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> CCTransitionCrossFade = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionCrossFade(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> CCTransitionRadialCCW = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionProgressRadialCCW(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> CCTransitionRadialCW = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionProgressRadialCW(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> PageTransitionForward = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    director.setDepthTest(<span class="literal">true</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionPageTurn(t, s, <span class="literal">false</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> PageTransitionBackward = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    director.setDepthTest(<span class="literal">true</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionPageTurn(t, s, <span class="literal">true</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FadeTRTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFadeTR(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FadeBLTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFadeBL(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FadeUpTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFadeUp(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> FadeDownTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionFadeDown(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> TurnOffTilesTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionTurnOffTiles(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> SplitRowsTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionSplitRows(t, s);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SplitColsTransition = <span class="function"><span class="keyword">function</span> (<span class="params">t, s</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> cc.TransitionSplitCols(t, s);</div><div class="line">&#125;;</div><div class="line">调用方式：</div><div class="line"><span class="keyword">var</span> scene = yourScene();</div><div class="line"><span class="comment">//以右向平滑效果为例</span></div><div class="line"><span class="keyword">var</span> transScene = cc.TransitionSlideInR(<span class="number">0.5</span>,scene);</div><div class="line">cc.director.runScene(transScene);</div></pre></td></tr></table></figure>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>这里有个cocos的坑，调用过场动画的这0.5秒时间内，如果你的scene函数中使用cc.director.getRunningScene()方法，可能会出错，因为这0.5秒内运行的场景，并不是你的主场景或者要切换的场景。</p>
+
+    
+  </div>
+</article>
+
+
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持小8君</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2018/01/24/JS判断对象是否为空的几种方法/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/08/25/爬虫-爬取图集图片/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+
+
+                    <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              链接
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+                        
+                              <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'tako8';
+    
+    var disqus_url = 'http://yoursite.com/2018/01/21/Cocos中场景切换特效/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//tako8.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+                                
+
+                                            <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+
+                                                <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="88" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+                                                <!-- 页面点击小红心 -->
+                                                <script type="text/javascript" src="/js/love.js"></script>
+
+
+                                                <a href="https://github.com/DonDracula"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+                                                        alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+    </html>
