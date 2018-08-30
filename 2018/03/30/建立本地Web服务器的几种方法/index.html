@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JS判断对象是否为空的几种方法 | Tako小8君</title>
+  <title>建立本地Web服务器的几种方法 | Tako小8君</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -32,17 +32,17 @@
     <meta name="keywords" content="总结," />
   
 
-  <meta name="description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b===&quot;&amp;#123;&amp;#125;&quot;);     //true 2.for in 循环判断1234">
+  <meta name="description" content="查看web生成项目的示例，一般有两种方法。  1.可以直接在浏览器中打开解压或克隆目录的html文件，运行某个示例；  2.可以本地安装一个Web服务器。对于大多数的基础性示例，方法1就可以了，但当我们需要加载一些外部资源时，例如三维模型和纹理图片等，仅打开一个HTML文件是不够的。  这种情况下我们就需要一个本地Web服务器，确保外部资源能正确加载。下面列出了几个简单建立Web服务器的例子。 1">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS判断对象是否为空的几种方法">
-<meta property="og:url" content="http://yoursite.com/2018/01/24/JS判断对象是否为空的几种方法/index.html">
+<meta property="og:title" content="建立本地Web服务器的几种方法">
+<meta property="og:url" content="http://yoursite.com/2018/03/30/建立本地Web服务器的几种方法/index.html">
 <meta property="og:site_name" content="Tako小8君">
-<meta property="og:description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b===&quot;&amp;#123;&amp;#125;&quot;);     //true 2.for in 循环判断1234">
-<meta property="og:updated_time" content="2018-04-21T14:06:17.972Z">
+<meta property="og:description" content="查看web生成项目的示例，一般有两种方法。  1.可以直接在浏览器中打开解压或克隆目录的html文件，运行某个示例；  2.可以本地安装一个Web服务器。对于大多数的基础性示例，方法1就可以了，但当我们需要加载一些外部资源时，例如三维模型和纹理图片等，仅打开一个HTML文件是不够的。  这种情况下我们就需要一个本地Web服务器，确保外部资源能正确加载。下面列出了几个简单建立Web服务器的例子。 1">
+<meta property="og:updated_time" content="2018-08-30T15:44:35.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS判断对象是否为空的几种方法">
-<meta name="twitter:description" content="在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点： 1.j将json对象转化为json字符串，在判断该字符串是否“{}”123var data = &amp;#123;&amp;#125;;var b = (JSON.stringify(data));alert(b===&quot;&amp;#123;&amp;#125;&quot;);     //true 2.for in 循环判断1234">
+<meta name="twitter:title" content="建立本地Web服务器的几种方法">
+<meta name="twitter:description" content="查看web生成项目的示例，一般有两种方法。  1.可以直接在浏览器中打开解压或克隆目录的html文件，运行某个示例；  2.可以本地安装一个Web服务器。对于大多数的基础性示例，方法1就可以了，但当我们需要加载一些外部资源时，例如三维模型和纹理图片等，仅打开一个HTML文件是不够的。  这种情况下我们就需要一个本地Web服务器，确保外部资源能正确加载。下面列出了几个简单建立Web服务器的例子。 1">
 
   
 
@@ -192,20 +192,20 @@
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-j将json对象转化为json字符串，在判断该字符串是否“-”"><span class="toc-text">1.j将json对象转化为json字符串，在判断该字符串是否“{}”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-for-in-循环判断"><span class="toc-text">2.for in 循环判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-jquery的isEmptyObject方法"><span class="toc-text">3.jquery的isEmptyObject方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Object-getOwnPropertyNames-方法"><span class="toc-text">4.Object.getOwnPropertyNames()方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用ES6的Object-keys-方法"><span class="toc-text">5.使用ES6的Object.keys()方法</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-用Python————适合大多数UNIX-Mac系统"><span class="toc-text">1. 用Python————适合大多数UNIX/Mac系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-用NPM——如果已经安装了Node-js"><span class="toc-text">2. 用NPM——如果已经安装了Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-用Mongoose———在Mac-Windows上可以移植"><span class="toc-text">3. 用Mongoose———在Mac/Windows上可以移植</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-JS判断对象是否为空的几种方法" class="article article-type-post" itemprop="blogPost">
+   <article id="post-建立本地Web服务器的几种方法" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">JS判断对象是否为空的几种方法</h1>
+    <h1 class="post-title">建立本地Web服务器的几种方法</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2018.01.24</span>
+        <span>2018.03.30</span>
       </span>
 
       
@@ -218,7 +218,7 @@
       
   <span class="article-category">
     <i class="icon-list"></i>
-    <a class="article-category-link" href="/categories/JS/">JS</a>
+    <a class="article-category-link" href="/categories/Web开发/">Web开发</a>
   </span>
 
 
@@ -226,7 +226,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="https://dondracula.github.io/2018/01/24/JS判断对象是否为空的几种方法/#disqus_thread"></a>
+          <a href="https://dondracula.github.io/2018/03/30/建立本地Web服务器的几种方法/#disqus_thread"></a>
         </span>
       
 
@@ -245,12 +245,24 @@
 
   <div class="article-content">
     
-      <p>在Javascript中，通过判断一个obj是否为空，可以保证代码的健壮性，总结一下，主要分为以下几点：</p>
-<h3 id="1-j将json对象转化为json字符串，在判断该字符串是否“-”"><a href="#1-j将json对象转化为json字符串，在判断该字符串是否“-”" class="headerlink" title="1.j将json对象转化为json字符串，在判断该字符串是否“{}”"></a>1.j将json对象转化为json字符串，在判断该字符串是否“{}”</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = (<span class="built_in">JSON</span>.stringify(data));</div><div class="line">alert(b===<span class="string">"&#123;&#125;"</span>);     <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h3 id="2-for-in-循环判断"><a href="#2-for-in-循环判断" class="headerlink" title="2.for in 循环判断"></a>2.for in 循环判断</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</div><div class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line">alert(b());     <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h3 id="3-jquery的isEmptyObject方法"><a href="#3-jquery的isEmptyObject方法" class="headerlink" title="3.jquery的isEmptyObject方法"></a>3.jquery的isEmptyObject方法</h3><p>此方法是jquery将上述2的方法(for in)进行封装，使用时需要依赖jquery<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> b = $.isEmptyObject(data);</div><div class="line">alert(b);     <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<h3 id="4-Object-getOwnPropertyNames-方法"><a href="#4-Object-getOwnPropertyNames-方法" class="headerlink" title="4.Object.getOwnPropertyNames()方法"></a>4.Object.getOwnPropertyNames()方法</h3><p>此方法是使用Object对象的getOwnPropertyNames方法，获取到对象中的属性名，存到一个数组中，返回数组对象，我们可以通过判断数组的length来判断此对象是否为空<br>注意：此方法不兼容ie8，其余浏览器没测试<br>var data = {};<br>var arr = Object.getOwnPropertyNames(data);<br>alert(arr.length == 0);     //true</p>
-<h3 id="5-使用ES6的Object-keys-方法"><a href="#5-使用ES6的Object-keys-方法" class="headerlink" title="5.使用ES6的Object.keys()方法"></a>5.使用ES6的Object.keys()方法</h3><p>与4方法类似，是ES6的新方法，返回值也是对象中属性名称组成的数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> arr = <span class="built_in">Object</span>.keys(data);</div><div class="line">alert(arr.length == <span class="number">0</span>);     <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
+      <p>查看web生成项目的示例，一般有两种方法。<br>  1.可以直接在浏览器中打开解压或克隆目录的html文件，运行某个示例；<br>  2.可以本地安装一个Web服务器。对于大多数的基础性示例，方法1就可以了，但当我们需要加载一些外部资源时，例如三维模型和纹理图片等，仅打开一个HTML文件是不够的。<br>  这种情况下我们就需要一个本地Web服务器，确保外部资源能正确加载。<br>下面列出了几个简单建立Web服务器的例子。</p>
+<h3 id="1-用Python————适合大多数UNIX-Mac系统"><a href="#1-用Python————适合大多数UNIX-Mac系统" class="headerlink" title="1. 用Python————适合大多数UNIX/Mac系统"></a>1. 用Python————适合大多数UNIX/Mac系统</h3><p>大多数的UNIX/Linux/Mac系统都已经安装了Python。在这些系统中可以很容易建立本地Web服务器：</p>
+<pre><code>&gt; python -m SimpleHTTPServer
+Serving HTTP on 0.0.0.0 port 8000 …
+</code></pre><p>在资源示例源代码目录下运行上述命令。</p>
+<h3 id="2-用NPM——如果已经安装了Node-js"><a href="#2-用NPM——如果已经安装了Node-js" class="headerlink" title="2. 用NPM——如果已经安装了Node.js"></a>2. 用NPM——如果已经安装了Node.js</h3><p>如果已经用过Node.js，那么很可能系统中已经安装了NPM。使用NPM时有两种选择，他们都可以快速建立用于测试的本地Web服务器。<br>  第一种是使用HTTPServer模块：</p>
+<pre><code>&gt; npm install -g http-server
+&gt; http-server
+Starting up http-server, serving ./ on port: 8080
+Hit CTRL-C to stop the server
+</code></pre><p>  也可以用SimpleHTTPServer</p>
+<pre><code>&gt; npm install -g simple-http-server
+&gt; nserver
+Simple-http-server Now Serving： /Users/jos/git/Physijs at http://
+Localhost：8000/
+</code></pre><p>但是第二种方式有个缺点，他不能自动的列出文件夹里东西，而第一种方式就可以。</p>
+<h3 id="3-用Mongoose———在Mac-Windows上可以移植"><a href="#3-用Mongoose———在Mac-Windows上可以移植" class="headerlink" title="3. 用Mongoose———在Mac/Windows上可以移植"></a>3. 用Mongoose———在Mac/Windows上可以移植</h3><p>如果没有安装Python或者NPM，那么还可以用一个简单的，可移植的Web服务器，Mongoose。<br>  首先，从<a href="https://code.google.com/p/mongoose/downloads/list" target="_blank" rel="external">https://code.google.com/p/mongoose/downloads/list</a> 下载特定平台的二进制文件。<br>  如果是Windows平台，把下载好的文件复制到示例所在的目录，双击即可启动一个Web浏览器，并显示该目录中的内容。<br>  对于其他操作系统，也必须将可执行程序复制到目标目录，通过命令行来启动。这两种情况下，本地Web服务器都会启动，端口是8080。</p>
+<p>点击相应的文件，就可以直接测试了。</p>
 
     
   </div>
@@ -283,10 +295,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2018/03/30/建立本地Web服务器的几种方法/">
+    <a class="hide pull-left" href="/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2018/01/21/Cocos中场景切换特效/">
+    <a class="show pull-right" href="/2018/01/24/JS判断对象是否为空的几种方法/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -403,7 +415,7 @@
   <script>
     var disqus_shortname = 'tako8';
     
-    var disqus_url = 'http://yoursite.com/2018/01/24/JS判断对象是否为空的几种方法/';
+    var disqus_url = 'http://yoursite.com/2018/03/30/建立本地Web服务器的几种方法/';
     
     (function(){
       var dsq = document.createElement('script');
