@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cocos2d引擎的一些认识 | Tako小8君</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+  
+    <meta name="keywords" content="总结," />
+  
+
+  <meta name="description" content="Cocos引擎的一些总结Cocos对象的绘制Cocos3.0前是在visit后就draw，draw进行OpenGL操作。就是说，每访问一个对象，先计算节点的渲染数据，然后马上渲染。由于节点是按树形结构组织的，若父节点p1和p2的深度分别是10和20，c1是p1的子节点，深度是30，c2是p2的子节点，深度是5，则顺序是p1,c1,c2,p2。3.0后，也是在visit后就draw，只不过draw并">
+<meta name="keywords" content="总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cocos2d引擎的一些认识">
+<meta property="og:url" content="http://yoursite.com/2018/09/05/Cocos2d引擎的一些认识/index.html">
+<meta property="og:site_name" content="Tako小8君">
+<meta property="og:description" content="Cocos引擎的一些总结Cocos对象的绘制Cocos3.0前是在visit后就draw，draw进行OpenGL操作。就是说，每访问一个对象，先计算节点的渲染数据，然后马上渲染。由于节点是按树形结构组织的，若父节点p1和p2的深度分别是10和20，c1是p1的子节点，深度是30，c2是p2的子节点，深度是5，则顺序是p1,c1,c2,p2。3.0后，也是在visit后就draw，只不过draw并">
+<meta property="og:image" content="http://yoursite.com/2018/09/05/Cocos2d引擎的一些认识/system.png">
+<meta property="og:updated_time" content="2018-09-05T16:25:38.910Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cocos2d引擎的一些认识">
+<meta name="twitter:description" content="Cocos引擎的一些总结Cocos对象的绘制Cocos3.0前是在visit后就draw，draw进行OpenGL操作。就是说，每访问一个对象，先计算节点的渲染数据，然后马上渲染。由于节点是按树形结构组织的，若父节点p1和p2的深度分别是10和20，c1是p1的子节点，深度是30，c2是p2的子节点，深度是5，则顺序是p1,c1,c2,p2。3.0后，也是在visit后就draw，只不过draw并">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/05/Cocos2d引擎的一些认识/system.png">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+
+    <body>
+
+        
+            <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+            
+
+                <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            链接
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cocos引擎的一些总结"><span class="toc-text">Cocos引擎的一些总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cocos对象的绘制"><span class="toc-text">Cocos对象的绘制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#影响游戏渲染性能因素"><span class="toc-text">影响游戏渲染性能因素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#批次渲染概念"><span class="toc-text">批次渲染概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cocos2d中的批次渲染"><span class="toc-text">cocos2d中的批次渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cocos引擎特点"><span class="toc-text">Cocos引擎特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cocos2d内存管理机制"><span class="toc-text">Cocos2d内存管理机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#游戏循环"><span class="toc-text">游戏循环</span></a></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Cocos2d引擎的一些认识" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Cocos2d引擎的一些认识</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2018.09.05</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Liu Yanhao</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Cocos/">Cocos</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="https://dondracula.github.io/2018/09/05/Cocos2d引擎的一些认识/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="Cocos引擎的一些总结"><a href="#Cocos引擎的一些总结" class="headerlink" title="Cocos引擎的一些总结"></a>Cocos引擎的一些总结</h2><h3 id="Cocos对象的绘制"><a href="#Cocos对象的绘制" class="headerlink" title="Cocos对象的绘制"></a>Cocos对象的绘制</h3><p>Cocos3.0前是在visit后就draw，draw进行OpenGL操作。就是说，每访问一个对象，先计算节点的渲染数据，然后马上渲染。由于节点是按树形结构组织的，若父节点p1和p2的深度分别是10和20，c1是p1的子节点，深度是30，c2是p2的子节点，深度是5，则顺序是p1,c1,c2,p2。<br>3.0后，也是在visit后就draw，只不过draw并不进行OpenGL操作。3.0封装了一个RednerCommon基类，在draw的时候生成了一个渲染命令，其实就是对渲染所需要的数据进行封装。RenderCommand包含两个成员，一个是命令类型_type，用来获取子对象的距离类型，另一个是z深度_globalOrder，可以依据z，对节点进行排序。node树采用中序遍历，根左边的localz为负数，右边为证书。引擎里有localZOrder和globalZorder两种逻辑深度。</p>
+<h3 id="影响游戏渲染性能因素"><a href="#影响游戏渲染性能因素" class="headerlink" title="影响游戏渲染性能因素"></a>影响游戏渲染性能因素</h3><p>手机硬件发展很快，但一般手机为了兼容性问题，仍会使用OpenGL ES2.0版本，造成对硬件性能的浪费。<br>比如说，一台手机本来渲染的基础性能是100分，但是由于图像接口问题和驱动层优化问题只能发挥70分，渲染引擎设计问题则只能发挥40分，如果程序员对引擎不够了解只能发挥到30分。这样就造成了貌似机器性能在飞速发展，有些游戏画质提升不是很快问题。<br>OpenGL是状态机设计模式，每次调用一个API都会去改变渲染管线中的某个开关。我们每调用一个API就会生成一个指令，这个指令告诉显卡怎么做，这里是存在性能损失的（调用渲染是异步过程，在缓冲区会维护一个渲染命令队列，某个时机去发送给驱动层该怎么做）。所以少调用OpenGL API渲染，性能自然就上去了，通常也是最简单的做法是批次渲染。</p>
+<h3 id="批次渲染概念"><a href="#批次渲染概念" class="headerlink" title="批次渲染概念"></a>批次渲染概念</h3><p>批次渲染就是尽量让操作类型相同的操作，一起进行操作。一般引擎中，都会有一个渲染队列，每个渲染单元抽象成一个渲染命令。每个命令去调用OpenGL API。如我们在2D游戏中，渲染命令一般只涉及到：设置Shader，绑定Texture，DrawElements这三种。<br>一般精灵的Shader都是一样的，这个我们可以合并。<br>Texture纹理，每个精灵都有自己的纹理，但如果把几张小图拼成一张大图，设置定点数据的UV坐标，也是可以合并。<br>DrawElement这里我们的渲染图元基本都是三角形，如果把三角形定点数据放在一个VBO(Vertex Buffer Object)中，也是可以合并。</p>
+<h3 id="cocos2d中的批次渲染"><a href="#cocos2d中的批次渲染" class="headerlink" title="cocos2d中的批次渲染"></a>cocos2d中的批次渲染</h3><p>cocos3.x后，推出一个技术叫（Auto-batching），在深度优先的子节点遍历情况下，相邻节点如果材质相同，就会自动合并批次。所以贴图相同的精灵是可以合并批次的。<br>而在实际操作中，我们需要做的就是选择好图片去合并成一张大图。</p>
+<h3 id="Cocos引擎特点"><a href="#Cocos引擎特点" class="headerlink" title="Cocos引擎特点"></a>Cocos引擎特点</h3><p>下图是Cocos引擎的架构图<br><img src="/2018/09/05/Cocos2d引擎的一些认识/system.png" width="500"></p>
+<p>最简单的游戏引擎本身就是一个渲染系统，它调用底层各类API，来帮助开发者进行渲染。<br>cocos提供了方便使用的跨平台渲染机制，并且可以通过使用第三方库来支持许多开发中用到的功能，例如文件压缩，网络支持，物理引擎，音频等功能，让开发者更能专注于渲染引擎的开发。Cocos2dx的核心部分是构建了场景中元素的层级结构，关系和元素的管理遍历绘制。并带有优秀的动画系统，且支持很多第三方工具，如骨骼动画制作，纹理拼接，网络地图等。</p>
+<h3 id="Cocos2d内存管理机制"><a href="#Cocos2d内存管理机制" class="headerlink" title="Cocos2d内存管理机制"></a>Cocos2d内存管理机制</h3><p>Cocos 引擎使用的是一个可称为智能指针的变体<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Ref:</div><div class="line">    def retain():pass</div><div class="line">    def release():pass</div><div class="line">    def autorelease():pass</div><div class="line">    def getRefreenceCount():pass</div><div class="line">    self._referenceCount = 0</div><div class="line">    #friend class AutoreleasePool</div></pre></td></tr></table></figure></p>
+<p>retian()增加引用，release()减少引用，但我们很少直接使用它们来管理。AutoRelease在调用的时候会声明对象为智能指针，但不关联自动变量，而是加入一个AutoReleasePool里，这个池在每一帧结束对池里的对象进行清理。<br>实现机制是，AutoReleasePool对池里对象release一下，没被使用，则应用为0，之后被释放。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">auto</span> node = <span class="keyword">new</span> Node()</div><div class="line">node-&gt;autorelease()</div><div class="line">#帧结束后被释放</div><div class="line"></div><div class="line"><span class="keyword">auto</span> node = <span class="keyword">new</span> Node()</div><div class="line">node-&gt;autorelease()</div><div class="line">addChild(node)</div><div class="line">#不会被释放</div></pre></td></tr></table></figure></p>
+<p>我们一般在创建对象的时候，就已经调用好了AutoRelease。AutoRelease主要应用在ui元素上。</p>
+<h3 id="游戏循环"><a href="#游戏循环" class="headerlink" title="游戏循环"></a>游戏循环</h3><p>帧开始：用户输入=&gt;动画计算=&gt;物理模拟=&gt;物理模拟完成=&gt;逻辑更新=&gt;更新完成=&gt;UI树遍历=&gt;遍历完成=&gt;h绘制=&gt;绘制完成=&gt;交换缓冲区=&gt;自动释放</p>
+
+    
+  </div>
+</article>
+
+
+        <div style="text-align:center;color: #ccc;font-size:16px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持小8君</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="hide pull-left" href="/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2018/03/30/建立本地Web服务器的几种方法/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+
+
+                    <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              链接
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+                        
+                              <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'tako8';
+    
+    var disqus_url = 'http://yoursite.com/2018/09/05/Cocos2d引擎的一些认识/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//tako8.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+    
+	
+  </div>
+
+                                
+
+                                            <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+
+                                                <script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="88" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+                                                <!-- 页面点击小红心 -->
+                                                <script type="text/javascript" src="/js/love.js"></script>
+
+
+                                                <a href="https://github.com/DonDracula"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+                                                        alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+    </html>
